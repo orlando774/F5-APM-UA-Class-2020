@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>BIG-IP Basics (optional)</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="BIG-IP Basics (optional)"/>
+  <meta name="product" content="F5 Identity and Access Management Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-05-19 03:36:25"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Identity and Access Management Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>BIG-IP Basics (optional) &#8212; F5 Identity and Access Management Solutions  documentation</title>
+    <link rel="stylesheet" href="../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Module 1: SAML Identity Provider" href="module1/module1.html" />
+    <link rel="prev" title="Lab Topology &amp; Environments" href="labinfo/labinfo.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      <!-- javascript code to maintain the sidebar scroll positon when loaded -->
+      <script type="text/javascript">
+        $(function() {
+          if (localStorage.tempScrollTop) {
+            $('#sidebar').scrollTop(localStorage.tempScrollTop);
+          }
+        });
+        $('#sidebar').on("scroll", function() {
+          localStorage.setItem("tempScrollTop", $('#sidebar').scrollTop());
+        });
+      </script>
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Identity and Access Management Solutions  </h5>
+        
+<div id="searchbox" role="search">
+  <form class="search" action="../search.html" method="get">
+    <input type="text" class="search" name="q" placeholder=" Search..." />
+    <button type="submit" class="btn btn-info navbar-btn"><i class="fa fa-search"></i></button>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../class1/class1.html">Class 1: SAML Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class2/class2.html">Class 2: OAuth Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class3/class3.html">Class 3: SWG - Securing Outbound Internet Access</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="class4.html">Class 4: SAML Identity Provider (IdP) Lab</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="labinfo/labinfo.html">Lab Topology &amp; Environments</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BIG-IP Basics (optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module1/module1.html">Module 1: SAML Identity Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module2/module2.html">Module 2: Access Control</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../class5/class5.html">Class 5: AD FS Proxy Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class6/class6.html">Class 6: Federating Common Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class7/class7.html">Class 7: Introduction to Universal Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class8/class8.html">Class 8: Troubleshooting Universal Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class9/class9.html">Class 9: Multi-Factor Auth for Cloud Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class10/class10.html">Class 10: Privileged User Access</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">BIG-IP Basics (optional)</a><ul>
+<li><a class="reference internal" href="#what-is-big-ip">What is BIG-IP</a></li>
+<li><a class="reference internal" href="#big-ip-basic-nomenclature">BIG-IP Basic Nomenclature</a></li>
+<li><a class="reference internal" href="#f5-devcentral-big-ip-basics-articles">F5 DevCentral BIG-IP Basics Articles</a></li>
+<li><a class="reference internal" href="#using-f5-in-various-environments">Using F5 in Various Environments</a></li>
+<li><a class="reference internal" href="#ha-proxy-to-big-ip-quick-start">HA Proxy to BIG-IP Quick Start</a></li>
+<li><a class="reference internal" href="#nginx-to-big-ip-quick-start">NGINX to BIG-IP Quick Start</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../index.html">F5 Identity and Access Management Solutions</a>
+              &gt; <a href="class4.html">Class 4: SAML Identity Provider (IdP) Lab</a>
+
+          <span class="right">
+             <a href="../_sources/class4/bigipbasics.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/osantiago774/f5-agility-labs-iam">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="big-ip-basics-optional">
+<span id="bigipbasics"></span><h1>BIG-IP Basics (optional)<a class="headerlink" href="#big-ip-basics-optional" title="Permalink to this headline">¶</a></h1>
+<p>Just in case you’re new to the F5 BIG-IP platform (or need a refresher) we’ve
+included some links and videos below that will help get you started.</p>
+<div class="section" id="what-is-big-ip">
+<h2>What is BIG-IP<a class="headerlink" href="#what-is-big-ip" title="Permalink to this headline">¶</a></h2>
+<iframe width="600" height="315" src="http://www.youtube.com/embed/D6J_j7HdkV8?rel=0" frameborder="0" gesture="media" allowfullscreen></iframe><p><em>Source: https://devcentral.f5.com/articles/lightboard-lessons-what-is-big-ip-26793</em></p>
+</div>
+<div class="section" id="big-ip-basic-nomenclature">
+<h2>BIG-IP Basic Nomenclature<a class="headerlink" href="#big-ip-basic-nomenclature" title="Permalink to this headline">¶</a></h2>
+<iframe width="600" height="315" src="https://www.youtube.com/embed/2YRKTyMgV4M" frameborder="0" gesture="media" allowfullscreen></iframe><p><em>Source: https://devcentral.f5.com/articles/lightboard-lessons-big-ip-basic-nomenclature-26144</em></p>
+</div>
+<div class="section" id="f5-devcentral-big-ip-basics-articles">
+<h2>F5 DevCentral BIG-IP Basics Articles<a class="headerlink" href="#f5-devcentral-big-ip-basics-articles" title="Permalink to this headline">¶</a></h2>
+<p>BIG-IP Basics Articles: <a class="reference external" href="https://devcentral.f5.com/articles?tag=devcentral+basics">https://devcentral.f5.com/articles?tag=devcentral+basics</a></p>
+</div>
+<div class="section" id="using-f5-in-various-environments">
+<h2>Using F5 in Various Environments<a class="headerlink" href="#using-f5-in-various-environments" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Public Cloud:<ul>
+<li><strong>AWS/Azure/GCP/etc.:</strong> <a class="reference external" href="http://clouddocs.f5.com/cloud/public/v1/">http://clouddocs.f5.com/cloud/public/v1/</a></li>
+</ul>
+</li>
+<li>Private Cloud:<ul>
+<li><strong>OpenStack:</strong> <a class="reference external" href="http://clouddocs.f5.com/cloud/openstack/">http://clouddocs.f5.com/cloud/openstack/</a></li>
+<li><strong>VMware:</strong> <a class="reference external" href="https://f5.com/solutions/technology-alliances/vmware">https://f5.com/solutions/technology-alliances/vmware</a></li>
+</ul>
+</li>
+<li>Container Ecosystems:<ul>
+<li><strong>Cloud Foundry:</strong> <a class="reference external" href="http://clouddocs.f5.com/containers/latest/cloudfoundry/">http://clouddocs.f5.com/containers/latest/cloudfoundry/</a></li>
+<li><strong>Kubernetes:</strong> <a class="reference external" href="http://clouddocs.f5.com/containers/latest/kubernetes">http://clouddocs.f5.com/containers/latest/kubernetes</a></li>
+<li><strong>Mesos Marathon:</strong> <a class="reference external" href="http://clouddocs.f5.com/containers/latest/marathon">http://clouddocs.f5.com/containers/latest/marathon</a></li>
+<li><strong>RedHat OpenShift:</strong> <a class="reference external" href="http://clouddocs.f5.com/containers/latest/openshift/">http://clouddocs.f5.com/containers/latest/openshift/</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="ha-proxy-to-big-ip-quick-start">
+<h2>HA Proxy to BIG-IP Quick Start<a class="headerlink" href="#ha-proxy-to-big-ip-quick-start" title="Permalink to this headline">¶</a></h2>
+<p>If you’re already familiar with HA Proxy, learning F5 BIG-IP is straightforward
+once you learn the associated F5 terminology.</p>
+<p>Here is a list of common HA Proxy configuration terminology and its F5 equivalent:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>HA Proxy</strong></td>
+<td><strong>F5 BIG-IP</strong></td>
+</tr>
+<tr class="row-even"><td>Frontend</td>
+<td>Virtual Server (VIP)</td>
+</tr>
+<tr class="row-odd"><td>Backend</td>
+<td>Pool</td>
+</tr>
+<tr class="row-even"><td>Server</td>
+<td>Member</td>
+</tr>
+<tr class="row-odd"><td>mode http</td>
+<td>HTTP Profile</td>
+</tr>
+<tr class="row-even"><td>default_backend</td>
+<td>Default pool</td>
+</tr>
+<tr class="row-odd"><td>use_backend</td>
+<td>LTM policy</td>
+</tr>
+<tr class="row-even"><td>check port</td>
+<td>Health monitor</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="nginx-to-big-ip-quick-start">
+<h2>NGINX to BIG-IP Quick Start<a class="headerlink" href="#nginx-to-big-ip-quick-start" title="Permalink to this headline">¶</a></h2>
+<p>If you are already familiar with NGINX, learning F5 BIG-IP will be
+straightforward once you learn the F5 terminology.</p>
+<p>NGINX administrators usually use multiple files and leverage the include
+command in their config to break down the config and make it easier to
+manage. F5 leverages <em>Profiles</em> which can be applied to a <em>Virtual Server</em>.</p>
+<p>NGINX uses in-band (passive) health monitors which can be enabled on F5 through
+the creation of an <em>inband monitor</em>. BIG-IP also supports the use of active
+health monitors, which will poll the pool member periodically.  Both can be
+used together for better monitoring of your services.</p>
+<p>F5 BIG-IP supports control-plane and data-plane programmability with:</p>
+<ul class="simple">
+<li>Node.js through the use of iRulesLX, iControlLX and iAppsLX</li>
+<li>TCL through the use of iRules and iApp Templates</li>
+</ul>
+<p>A lot of the manual configuration and scripting steps that are required with NGINX
+are supported more easily through various config parameters and profiles in BIG-IP.
+By leveraging the control-plane programmability features this class covers you can
+achieve full automation of your services with the BIG-IP platform.</p>
+<p>F5 BIG-IP is designed to be a full proxy by default.  In most cases there is no
+need to tune TCP &amp; HTTP buffering like you would on NGINX (i.e. using
+<code class="docutils literal notranslate"><span class="pre">proxy_buffering</span></code>).  This is because the default settings have been optimized
+and can adapt to most situations.</p>
+<p>Here is a list of common NGINX configuration terminology and its F5 equivalent:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>NGINX</strong></td>
+<td><strong>F5 BIG-IP</strong></td>
+</tr>
+<tr class="row-even"><td>listen</td>
+<td>Virtual Server Port (VIP)</td>
+</tr>
+<tr class="row-odd"><td>upstream</td>
+<td>Pool</td>
+</tr>
+<tr class="row-even"><td>proxy_pass</td>
+<td>Default Pool</td>
+</tr>
+<tr class="row-odd"><td>server</td>
+<td>Member</td>
+</tr>
+<tr class="row-even"><td>ssl_certificate</td>
+<td>SSL Profile Option</td>
+</tr>
+<tr class="row-odd"><td>return</td>
+<td>LTM HTTP Policy Option</td>
+</tr>
+<tr class="row-even"><td>proxy_set_header X Forwarded For</td>
+<td>HTTP Profile Option Insert X-Forwarded-For</td>
+</tr>
+<tr class="row-odd"><td>proxy_set_header</td>
+<td>LTM HTTP Policy Option</td>
+</tr>
+<tr class="row-even"><td>add_header</td>
+<td>LTM HTTP Policy Option</td>
+</tr>
+<tr class="row-odd"><td>location &amp; proxy_pass</td>
+<td>LTM HTTP Policy Option</td>
+</tr>
+<tr class="row-even"><td>Proxy Cache</td>
+<td>Web Acceleration Policy</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="labinfo/labinfo.html" title="Lab Topology &amp; Environments" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="module1/module1.html" title="Module 1: SAML Identity Provider" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../_static/js/index.js"></script>
+  <script src="../_static/js/jquery.appear.js"></script>
+  <script src="../_static/js/printThis.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/clouddocs.js"></script>
+  <script src="/assets/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

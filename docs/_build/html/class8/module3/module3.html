@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 3: General Troubleshooting</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 3: General Troubleshooting"/>
+  <meta name="product" content="F5 Identity and Access Management Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-05-19 03:36:25"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Identity and Access Management Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab 3: General Troubleshooting &#8212; F5 Identity and Access Management Solutions  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 4: Visual Policy Editor (VPE) &amp; Session Variables" href="../module4/module4.html" />
+    <link rel="prev" title="Lab 2: APM Troubleshooting Lab Object Preparation (TMSH)" href="../module2/module2.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      <!-- javascript code to maintain the sidebar scroll positon when loaded -->
+      <script type="text/javascript">
+        $(function() {
+          if (localStorage.tempScrollTop) {
+            $('#sidebar').scrollTop(localStorage.tempScrollTop);
+          }
+        });
+        $('#sidebar').on("scroll", function() {
+          localStorage.setItem("tempScrollTop", $('#sidebar').scrollTop());
+        });
+      </script>
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Identity and Access Management Solutions  </h5>
+        
+<div id="searchbox" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" class="search" name="q" placeholder=" Search..." />
+    <button type="submit" class="btn btn-info navbar-btn"><i class="fa fa-search"></i></button>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">Class 1: SAML Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">Class 2: OAuth Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">Class 3: SWG - Securing Outbound Internet Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class4/class4.html">Class 4: SAML Identity Provider (IdP) Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class5/class5.html">Class 5: AD FS Proxy Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class6/class6.html">Class 6: Federating Common Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class7/class7.html">Class 7: Introduction to Universal Access</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class8.html">Class 8: Troubleshooting Universal Access</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labinfo.html">Lab Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">Lab 1: APM Troubleshooting Lab Object Preparation (GUI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module2/module2.html">Lab 2: APM Troubleshooting Lab Object Preparation (TMSH)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 3: General Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module4/module4.html">Lab 4: Visual Policy Editor (VPE) &amp; Session Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module5/module5.html">Lab 5: Command Line Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../conclusion.html">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../class9/class9.html">Class 9: Multi-Factor Auth for Cloud Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class10/class10.html">Class 10: Privileged User Access</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 3: General Troubleshooting</a><ul>
+<li><a class="reference internal" href="#questions-to-ask-yourself-lab3">Questions to ask yourself (LAB3)</a></li>
+<li><a class="reference internal" href="#verify-dns-is-setup-from-the-cli-of-the-big-ip">Verify DNS is setup from the CLI of the BIG-IP</a></li>
+<li><a class="reference internal" href="#verify-ntp-is-setup-from-the-cli-of-the-bigip">Verify NTP is setup from the CLI of the BIGIP</a></li>
+<li><a class="reference internal" href="#manage-sessions-within-the-access-policy-manager-menu">Manage Sessions within the Access Policy Manager menu</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Identity and Access Management Solutions</a>
+              &gt; <a href="../class8.html">Class 8: Troubleshooting Universal Access</a>
+
+          <span class="right">
+             <a href="../../_sources/class8/module3/module3.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/osantiago774/f5-agility-labs-iam">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-3-general-troubleshooting">
+<h1>Lab 3: General Troubleshooting<a class="headerlink" href="#lab-3-general-troubleshooting" title="Permalink to this headline">¶</a></h1>
+<p>In this lab exercise, you will learn where to look and what to look at
+when an Access Policy is not successfully allowing access or not
+performing as intended.</p>
+<div class="section" id="questions-to-ask-yourself-lab3">
+<h2>Questions to ask yourself (LAB3)<a class="headerlink" href="#questions-to-ask-yourself-lab3" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Do we have proper Network Connectivity?</li>
+<li>Are there any Upstream/Downstream Firewall Rules preventing APM to be
+reachable or to reach destination targets it requires to access?</li>
+<li>Do we have DNS setup properly?</li>
+<li>Do we have NTP setup properly?</li>
+<li>Are we receiving any Warnings or Error messages when we logon?</li>
+<li>Are there any missing dependencies?</li>
+<li>Time to check on our Sessions under Manage Session Menu<ol class="loweralpha">
+<li>What can we see from the Manage Session Menu?</li>
+<li>If we click the Session ID link what more information is
+available?</li>
+<li>Is Authentication Successful or is it Failing?</li>
+<li>Is the user receiving the proper ENDING ALLOW from the Policy?</li>
+</ol>
+</li>
+<li>Time to Review the Reports information for the Session in question<ol class="loweralpha">
+<li>What information is available from the ALL SESSIONS REPORT?</li>
+<li>Can we review the Session Variables for the user’s session from
+the ALL SESSION REPORT? If YES then Why however If NO then WHY?</li>
+</ol>
+</li>
+<li>Can the BIG-IP TMOS Resolve the AAA server by Hostname and by
+Hostname.Domain?<ol class="loweralpha">
+<li>Is the AAA reachable over the network, no Firewalls blocking
+communication from BIGIP Self-IP?</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="verify-dns-is-setup-from-the-cli-of-the-big-ip">
+<h2>Verify DNS is setup from the CLI of the BIG-IP<a class="headerlink" href="#verify-dns-is-setup-from-the-cli-of-the-big-ip" title="Permalink to this headline">¶</a></h2>
+<p>Perform the following steps to verify DNS is correctly configured:</p>
+<p><a class="reference internal" href="../../_images/image334.png"><img alt="image26" src="../../_images/image334.png" style="width: 1.33004in; height: 0.80208in;" /></a></p>
+<ol class="arabic simple">
+<li>Click on the PuTTY (SSH client) to access the BIG-IP CLI</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image344.png"><img alt="image27" src="../../_images/image344.png" style="width: 5.25000in; height: 5.15331in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Click on the <strong>agilitylab</strong> Saved Session and click Load</li>
+<li>The click on <strong>OPEN</strong></li>
+</ol>
+<p>Alternatively, you can simply double-click on the <strong>agilitylab</strong> Saved
+Session to open the session</p>
+<p><a class="reference internal" href="../../_images/image364.png"><img alt="image28" src="../../_images/image364.png" style="width: 5.02778in; height: 1.68056in;" /></a></p>
+<ol class="arabic simple" start="4">
+<li>Logon as <strong>root</strong> with password <strong>default</strong> if necessary (you should logon automatically)</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image384.png"><img alt="image29" src="../../_images/image384.png" style="width: 5.30972in; height: 2.99931in;" /></a></p>
+<ol class="arabic simple" start="5">
+<li>From the CLI type <strong>dig agilitylab.com</strong> and then press enter</li>
+<li>The following results should be reviewed and verified.</li>
+<li>If DNS is properly configured you should receive the returned IP address of <strong>10.128.20.100</strong></li>
+</ol>
+<p><a class="reference internal" href="../../_images/image394.png"><img alt="image30" src="../../_images/image394.png" style="width: 5.30000in; height: 0.98470in;" /></a></p>
+<ol class="arabic simple" start="8">
+<li>From the CLI type <strong>nslookup</strong> and then press enter.</li>
+<li>Type <strong>agilitylab.com</strong> and then press enter</li>
+<li>The following results should be reviewed and verified.</li>
+<li>If DNS is properly configured you should receive the returned IP address of <strong>10.128.20.100</strong></li>
+<li>Exit nslookup by typing <strong>exit</strong></li>
+</ol>
+</div>
+<div class="section" id="verify-ntp-is-setup-from-the-cli-of-the-bigip">
+<h2>Verify NTP is setup from the CLI of the BIGIP<a class="headerlink" href="#verify-ntp-is-setup-from-the-cli-of-the-bigip" title="Permalink to this headline">¶</a></h2>
+<p>Perform the following steps to verify NTP is correctly configured:</p>
+<p><a class="reference internal" href="../../_images/image403.png"><img alt="image31" src="../../_images/image403.png" style="width: 5.30000in; height: 0.57609in;" /></a></p>
+<ol class="arabic simple">
+<li>From the CLI (via PuTTy –SSH Client) …. type <strong>ntpq –pn</strong> and then
+press enter.</li>
+<li>The following results should be reviewed.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image423.png"><img alt="image32" src="../../_images/image423.png" style="width: 5.09722in; height: 0.65278in;" /></a></p>
+<ol class="arabic" start="3">
+<li><div class="first line-block">
+<div class="line">If time is out of sync by too much of an offset you can update the
+local time using the following command:</div>
+<div class="line"><strong>date MMDDhhmmYYYY</strong></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="manage-sessions-within-the-access-policy-manager-menu">
+<h2>Manage Sessions within the Access Policy Manager menu<a class="headerlink" href="#manage-sessions-within-the-access-policy-manager-menu" title="Permalink to this headline">¶</a></h2>
+<p>We use the Manage Sessions menu to view general status of currently
+logged in sessions, view their progress through a policy, and to kill
+sessions when needed.</p>
+<p><strong>STEP 1</strong></p>
+<p><a class="reference internal" href="../../_images/image433.png"><img alt="image33" src="../../_images/image433.png" style="width: 5.30000in; height: 0.74486in;" /></a></p>
+<ol class="arabic simple">
+<li>Open a USER session to APM through a new browser window by navigating
+to your first Virtual Server IP Address created in LAB I
+(<strong>10.128.10.100</strong>)</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image443.png"><img alt="image34" src="../../_images/image443.png" style="width: 5.31250in; height: 5.79805in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Did you receive an error message? If so, take note of the Session
+Reference Number</li>
+</ol>
+<p><strong>TEST 1</strong></p>
+<p><a class="reference internal" href="../../_images/image453.png"><img alt="image35" src="../../_images/image453.png" style="width: 5.24680in; height: 2.65625in;" /></a></p>
+<ol class="arabic simple">
+<li>In the browser window, you are using to manage the BIG-IP, navigate
+to Access  Overview &gt; Active Sessions menu.</li>
+<li>Review the Manage Sessions screen, is there an Active Session? If not
+then why?</li>
+</ol>
+<p><strong>STEP 2</strong></p>
+<p><a class="reference internal" href="../../_images/image473.png"><img alt="image36" src="../../_images/image473.png" style="width: 5.30972in; height: 1.95069in;" /></a></p>
+<ol class="arabic simple">
+<li>Now open the APM Visual Policy Editor (VPE) for the policy
+created/loaded in LAB I by navigating to Access  Profiles/Policies
+-&gt; Access Profiles (Per-Session Policies) menu.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image483.png"><img alt="image37" src="../../_images/image483.png" style="width: 5.30000in; height: 0.85074in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Then click the Edit link in the row that has the name of your Access
+Profile you are working with currently.
+(<strong>Agility-Lab-Access-Profile</strong>)</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image493.png"><img alt="image38" src="../../_images/image493.png" style="width: 5.30000in; height: 1.51016in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>This will either launch a new browser or new tab depending on your
+browsers settings to display the APM Visual Policy Editor (VPE). The
+first policy we created was never edited to add any additional tasks
+that would instruct APM on what Actions it would need to take/enforce
+throughout a Policy Execution for the user’s Session. So we will now
+adjust the policy and retest to see if we receive some new results.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image493.png"><img alt="image39" src="../../_images/image493.png" style="width: 5.30000in; height: 1.51016in;" /></a></p>
+<ol class="arabic simple" start="4">
+<li>Click on the <strong>+</strong> symbol between the Start and ending Deny objects.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image5110.png"><img alt="image40" src="../../_images/image5110.png" style="width: 5.30972in; height: 4.78750in;" /></a></p>
+<ol class="arabic simple" start="5">
+<li>This will pop up the Actions window where we can select from several
+Actions we wish to associate with our policy. On the Logon tab select
+the <strong>Logon Page</strong> radio button and then click the <strong>ADD ITEM</strong>
+button at the bottom of the page.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image523.png"><img alt="image41" src="../../_images/image523.png" style="width: 5.27083in; height: 5.47535in;" /></a></p>
+<ol class="arabic simple" start="6">
+<li>Click the <strong>SAVE</strong> button on the Logon Page properties window.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image533.png"><img alt="image42" src="../../_images/image533.png" style="width: 5.30000in; height: 1.47274in;" /></a></p>
+<ol class="arabic simple" start="7">
+<li>Then click the <strong>Apply Access Policy</strong> link on the top left of the
+page.</li>
+</ol>
+<p><strong>TEST 2</strong></p>
+<p><a class="reference internal" href="../../_images/image433.png"><img alt="image43" src="../../_images/image433.png" style="width: 5.30000in; height: 0.74486in;" /></a></p>
+<ol class="arabic simple">
+<li>Restart your session to APM. (<strong>https://10.128.10.100</strong>)</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image543.png"><img alt="image44" src="../../_images/image543.png" style="width: 5.30000in; height: 4.27509in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Did you receive and error this time? Or did you receive a Logon Page?</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image563.png"><img alt="image45" src="../../_images/image563.png" style="width: 5.30972in; height: 2.79931in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>Open your browser or tab for managing APM and open the Active
+Sessions menu again.</li>
+<li>Is there now an Active Session displayed on the page? If you were
+already on this page you may need to click the Refresh Session Table
+button.</li>
+<li>What does the Status Icon look like? Is it a Green Circle or a Blue
+Square?</li>
+<li>Is your username displayed in the Logon column?</li>
+<li>Click on the Session ID for your session, this will open up a Session
+Details window.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image583.png"><img alt="image46" src="../../_images/image583.png" style="width: 5.30972in; height: 0.71806in;" /></a></p>
+<ol class="arabic simple" start="8">
+<li>In the Session Details window, we can see some information about the
+session up to the point that the policy has executed so far.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image593.png"><img alt="image47" src="../../_images/image593.png" style="width: 5.30000in; height: 1.05629in;" /></a></p>
+<ol class="arabic simple" start="9">
+<li>Further down there is a reports section titled <strong>Built-In Reports</strong>,
+click that to open the list of built in reports.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image603.png"><img alt="image48" src="../../_images/image603.png" style="width: 5.30000in; height: 1.88883in;" /></a></p>
+<ol class="arabic simple" start="10">
+<li>Scroll down to see the list of <strong>Session Reports</strong> and click the <strong>Current Sessions</strong> line and select <strong>Run Report</strong> from the pop up window.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image6110.png"><img alt="image49" src="../../_images/image6110.png" style="width: 5.30000in; height: 1.13638in;" /></a></p>
+<ol class="arabic simple" start="11">
+<li>Do you see your Session ID displayed in the list of current sessions? If not then why?</li>
+</ol>
+<p><strong>TEST 3</strong></p>
+<p><a class="reference internal" href="../../_images/image624.png"><img alt="image50" src="../../_images/image624.png" style="width: 5.30000in; height: 3.50845in;" /></a></p>
+<ol class="arabic simple">
+<li>Return to the browser or tab you are using for access to
+<strong>https://10.128.10.100</strong>. Restart a new session if necessary.</li>
+<li>Next logon to the APM Logon page with:<ul>
+<li>Username: <strong>student</strong></li>
+<li>Password: <strong>password</strong></li>
+</ul>
+</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image634.png"><img alt="image51" src="../../_images/image634.png" style="width: 5.31250in; height: 3.55414in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>Did you receive and error after logging on? If so note the Session
+Reference Number.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image644.png"><img alt="image52" src="../../_images/image644.png" style="width: 5.27045in; height: 3.28125in;" /></a></p>
+<ol class="arabic simple" start="4">
+<li>Review the Manage Sessions menu, is your session listed?</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image664.png"><img alt="image53" src="../../_images/image664.png" style="width: 5.30972in; height: 1.71875in;" /></a></p>
+<ol class="arabic simple" start="5">
+<li>Navigate to Access -&gt; Overview  Access Reports. When prompted Click
+Run Report.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image674.png"><img alt="image54" src="../../_images/image674.png" style="width: 5.30000in; height: 0.95176in;" /></a></p>
+<ol class="arabic simple" start="6">
+<li>Do you see your Session ID listed in the list of All Sessions? Is the
+username listed in the Logon column?</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image684.png"><img alt="image55" src="../../_images/image684.png" style="width: 5.28361in; height: 2.26042in;" /></a></p>
+<ol class="arabic simple" start="7">
+<li>Click the Session ID to open the Session Details window.</li>
+<li>Do you now see more information in this Sessions Details compared to
+the previous one we reviewed?</li>
+<li>Is the username listed in the details?</li>
+<li>In the Session Details screen we can see some important troubleshooting information, for example just below the username row we see a line that states that the Policy followed a path or branch called Fallback out of the Logon Page object to an Ending “Deny” thus the Access Policy Result was Logon_Deny.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image694.png"><img alt="image56" src="../../_images/image694.png" style="width: 5.30000in; height: 0.95176in;" /></a></p>
+<ol class="arabic simple" start="11">
+<li>Now click back on the All Sessions tab at the top.</li>
+<li>In the row for this session look to the right of the Logon column. You will see the next column states that the session is not Active. Now click the View Session Variables link in the next column.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image704.png"><img alt="image57" src="../../_images/image704.png" style="width: 5.30000in; height: 1.16637in;" /></a></p>
+<ol class="arabic simple" start="13">
+<li>Do you see a lot of information recorded for Session Variables for this session? If not, then why?</li>
+</ol>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="../module2/module2.html" title="Lab 2: APM Troubleshooting Lab Object Preparation (TMSH)" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="../module4/module4.html" title="Lab 4: Visual Policy Editor (VPE) &amp; Session Variables" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/clouddocs.js"></script>
+  <script src="/assets/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

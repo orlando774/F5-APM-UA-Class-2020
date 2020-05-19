@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 4: Visual Policy Editor (VPE) &amp; Session Variables</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 4: Visual Policy Editor (VPE) &amp; Session Variables"/>
+  <meta name="product" content="F5 Identity and Access Management Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-05-19 03:36:25"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Identity and Access Management Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab 4: Visual Policy Editor (VPE) &amp; Session Variables &#8212; F5 Identity and Access Management Solutions  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 5: Command Line Tools" href="../module5/module5.html" />
+    <link rel="prev" title="Lab 3: General Troubleshooting" href="../module3/module3.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      <!-- javascript code to maintain the sidebar scroll positon when loaded -->
+      <script type="text/javascript">
+        $(function() {
+          if (localStorage.tempScrollTop) {
+            $('#sidebar').scrollTop(localStorage.tempScrollTop);
+          }
+        });
+        $('#sidebar').on("scroll", function() {
+          localStorage.setItem("tempScrollTop", $('#sidebar').scrollTop());
+        });
+      </script>
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Identity and Access Management Solutions  </h5>
+        
+<div id="searchbox" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" class="search" name="q" placeholder=" Search..." />
+    <button type="submit" class="btn btn-info navbar-btn"><i class="fa fa-search"></i></button>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">Class 1: SAML Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">Class 2: OAuth Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">Class 3: SWG - Securing Outbound Internet Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class4/class4.html">Class 4: SAML Identity Provider (IdP) Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class5/class5.html">Class 5: AD FS Proxy Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class6/class6.html">Class 6: Federating Common Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class7/class7.html">Class 7: Introduction to Universal Access</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class8.html">Class 8: Troubleshooting Universal Access</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labinfo.html">Lab Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">Lab 1: APM Troubleshooting Lab Object Preparation (GUI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module2/module2.html">Lab 2: APM Troubleshooting Lab Object Preparation (TMSH)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module3/module3.html">Lab 3: General Troubleshooting</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 4: Visual Policy Editor (VPE) &amp; Session Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module5/module5.html">Lab 5: Command Line Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../conclusion.html">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../class9/class9.html">Class 9: Multi-Factor Auth for Cloud Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class10/class10.html">Class 10: Privileged User Access</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 4: Visual Policy Editor (VPE) &amp; Session Variables</a><ul>
+<li><a class="reference internal" href="#questions-to-ask-yourself-lab4">Questions to ask yourself (LAB4)</a></li>
+<li><a class="reference internal" href="#visual-policy-editor-vpe-workflow-actions-branches-endings">Visual Policy Editor (VPE) Workflow, Actions, Branches, Endings</a></li>
+<li><a class="reference internal" href="#pausing-the-apm-policy-execution-for-troubleshooting-the-message-box">Pausing the APM Policy Execution for Troubleshooting – The Message Box</a></li>
+<li><a class="reference internal" href="#session-variables-setting-and-retrieving-some-quick-information">Session Variables – Setting and Retrieving (Some Quick Information)</a><ul>
+<li><a class="reference internal" href="#about-session-variable-names">About Session Variable Names</a></li>
+<li><a class="reference internal" href="#session-variable-reference">Session Variable Reference</a></li>
+<li><a class="reference internal" href="#session-variable-categorization">Session Variable Categorization</a></li>
+<li><a class="reference internal" href="#active-session-variables">Active Session Variables</a></li>
+<li><a class="reference internal" href="#session-variable-manipulation-via-tcl">Session Variable Manipulation via TCL</a></li>
+<li><a class="reference internal" href="#getting-setting-session-variables">Getting/Setting Session Variables</a></li>
+<li><a class="reference internal" href="#using-irules">Using iRules</a></li>
+<li><a class="reference internal" href="#set-secure-variables">Set Secure Variables</a></li>
+<li><a class="reference internal" href="#session-variable-exercise">Session Variable Exercise</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Identity and Access Management Solutions</a>
+              &gt; <a href="../class8.html">Class 8: Troubleshooting Universal Access</a>
+
+          <span class="right">
+             <a href="../../_sources/class8/module4/module4.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/osantiago774/f5-agility-labs-iam">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-4-visual-policy-editor-vpe-session-variables">
+<h1>Lab 4: Visual Policy Editor (VPE) &amp; Session Variables<a class="headerlink" href="#lab-4-visual-policy-editor-vpe-session-variables" title="Permalink to this headline">¶</a></h1>
+<p>This lab will go a little deeper into understanding the Visual Policy
+Editor and Session Variables.</p>
+<div class="section" id="questions-to-ask-yourself-lab4">
+<h2>Questions to ask yourself (LAB4)<a class="headerlink" href="#questions-to-ask-yourself-lab4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Does the VPE Flow look correct?</li>
+<li>Does the VPE have the proper ENDING assigned to the appropriate
+BRANCH?</li>
+<li>Are your connection attempts following the intended VPE BRANCH/PATH
+during your test?<ul>
+<li>How could you alter the VPE to allow for better trouble shooting
+or pausing of a policy execution and termination?</li>
+</ul>
+</li>
+<li>How can I pause the Policy Execution or Termination to review the
+session variable in Reports?</li>
+<li>What are VPE Actions?</li>
+<li>Are the Correct Session Variables being sent to the AAA Object?</li>
+<li>How can we GET or SET Session Variables in the VPE?</li>
+<li>How could I preserve the originally requested URI from the Client to
+pass to the internal server after APM authentication has complete?</li>
+</ul>
+</div>
+<div class="section" id="visual-policy-editor-vpe-workflow-actions-branches-endings">
+<h2>Visual Policy Editor (VPE) Workflow, Actions, Branches, Endings<a class="headerlink" href="#visual-policy-editor-vpe-workflow-actions-branches-endings" title="Permalink to this headline">¶</a></h2>
+<p>The Visual Policy Editor (VPE) is a screen on which to configure an
+access policy using visual elements. We have used it a few times already
+throughout our previous labs. This is meant to both review and explain
+in a bit more detail what the available Visual Policy Editor conventions
+are.</p>
+<p>This table provides a visual dictionary for the Visual Policy Editor
+(VPE).</p>
+<p><strong>Visual Policy Editor (VPE) Visual Dictionary</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="81%" />
+<col width="6%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Element type</th>
+<th class="head">Description</th>
+<th class="head">Visual element</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Initial Access Policy</td>
+<td>When an access profile is created, usually an initial access policy is also created.</td>
+<td><a class="reference internal" href="../../_images/image7110.png"><img alt="image58" src="../../_images/image7110.png" style="width: 1.53743in; height: 0.80214in;" /></a></td>
+</tr>
+<tr class="row-odd"><td>Start</td>
+<td>Every access profile contains a start.</td>
+<td><a class="reference internal" href="../../_images/image724.png"><img alt="image59" src="../../_images/image724.png" style="width: 0.48663in; height: 0.31660in;" /></a></td>
+</tr>
+<tr class="row-even"><td>Branch</td>
+<td>A branch connects an action to another action or to an ending.</td>
+<td><a class="reference internal" href="../../_images/image734.png"><img alt="image60" src="../../_images/image734.png" style="width: 0.58333in; height: 0.28125in;" /></a></td>
+</tr>
+<tr class="row-odd"><td>Add an action</td>
+<td>Clicking this icon causes a screen to open with available actions for selection.</td>
+<td><a class="reference internal" href="../../_images/image744.png"><img alt="image61" src="../../_images/image744.png" style="width: 0.19792in; height: 0.21875in;" /></a></td>
+</tr>
+<tr class="row-even"><td>Action</td>
+<td>Clicking the name of an action, such as Logon Page, opens a screen with properties and rules for the action. Clicking the x deletes the action from the access policy.</td>
+<td><a class="reference internal" href="../../_images/image753.png"><img alt="image62" src="../../_images/image753.png" style="width: 0.81250in; height: 0.39583in;" /></a></td>
+</tr>
+<tr class="row-odd"><td>Action that requires some configuration</td>
+<td>The red asterisk indicates that some properties must be configured. Clicking the name opens a screen with properties for the action.</td>
+<td><a class="reference internal" href="../../_images/image763.png"><img alt="image63" src="../../_images/image763.png" style="width: 0.68750in; height: 0.72917in;" /></a></td>
+</tr>
+<tr class="row-even"><td>Ending</td>
+<td>Each branch has an ending: Allow or Deny.</td>
+<td><a class="reference internal" href="../../_images/image773.png"><img alt="image64" src="../../_images/image773.png" style="width: 0.67708in; height: 0.39583in;" /></a></td>
+</tr>
+<tr class="row-odd"><td>Configure ending</td>
+<td>Clicking the name of an ending opens a popup screen.</td>
+<td><a class="reference internal" href="../../_images/image783.png"><img alt="image65" src="../../_images/image783.png" style="width: 0.77986in; height: 0.66845in;" /></a></td>
+</tr>
+<tr class="row-even"><td>Add a macro for use in the access policy</td>
+<td>Opens a screen for macro template selection. After addition, the macro is available for configuration and for use as an action item.</td>
+<td><a class="reference internal" href="../../_images/image793.png"><img alt="image66" src="../../_images/image793.png" style="width: 1.07292in; height: 0.39583in;" /></a></td>
+</tr>
+<tr class="row-odd"><td>Macro added for use</td>
+<td>Added macros display under the access policy. Clicking the plus (+) sign expands the macro for configuration of the actions in it.</td>
+<td><a class="reference internal" href="../../_images/image803.png"><img alt="image67" src="../../_images/image803.png" style="width: 2.33155in; height: 0.70525in;" /></a></td>
+</tr>
+<tr class="row-even"><td>Macrocall in an Access Policy</td>
+<td>Clicking the <em>Macrocall</em> name expands the <em>Macro</em> in the area below the <em>Access Policy.</em></td>
+<td><a class="reference internal" href="../../_images/image816.png"><img alt="image68" src="../../_images/image816.png" style="width: 2.34225in; height: 1.17833in;" /></a></td>
+</tr>
+<tr class="row-odd"><td>Apply Access Policy</td>
+<td>Clicking it commits changes. The visual policy editor displays this link when any changes remain uncommitted.</td>
+<td><a class="reference internal" href="../../_images/image823.png"><img alt="image69" src="../../_images/image823.png" style="width: 2.31788in; height: 0.92338in;" /></a></td>
+</tr>
+<tr class="row-even"><td>Add Items Actions</td>
+<td>The actions that are available on any given tab of the <em>Add Item</em> screen depend on the access profile type, such as LTM-APM (for web access) or SSL-VPN (for remote access), and so on. Only actions that are appropriate for the access profile type will display.</td>
+<td><a class="reference internal" href="../../_images/image83.jpeg"><img alt="image70" src="../../_images/image83.jpeg" style="width: 2.32450in; height: 2.08460in;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="pausing-the-apm-policy-execution-for-troubleshooting-the-message-box">
+<h2>Pausing the APM Policy Execution for Troubleshooting – The Message Box<a class="headerlink" href="#pausing-the-apm-policy-execution-for-troubleshooting-the-message-box" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have reviewed/refreshed our memory on VPE conventions lets
+edit our policy we were previously working on to add some more actions.
+This section we show a great tool for troubleshooting a policy that may
+have been reaching an ENDING DENY and closing the APM session too
+rapidly for proper inspection during the troubleshooting phase.</p>
+<p><strong>STEP 1</strong></p>
+<p><a class="reference internal" href="../../_images/image843.png"><img alt="image71" src="../../_images/image843.png" style="width: 5.30000in; height: 0.76798in;" /></a></p>
+<ol class="arabic simple">
+<li>Navigate to Access  Access Profiles  Profiles/Policies -&gt; Access
+Profiles (Per-Sessions Policies). Click Edit next to
+<strong>Agility-Lab-Access-Profile</strong> to open the Visual Policy Editor
+(VPE).</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image853.png"><img alt="image72" src="../../_images/image853.png" style="width: 5.30000in; height: 1.12169in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>After the Logon Page object, on the fallback branch, click the <strong>+</strong>
+symbol to open the Actions window.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image863.png"><img alt="image73" src="../../_images/image863.png" style="width: 5.30000in; height: 1.99478in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>Click on the <strong>General</strong> <strong>Purpose</strong> tab and then click the radio
+button next to <strong>Message Box</strong> and click the <strong>ADD ITEM</strong> button at
+the bottom of the page.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image873.png"><img alt="image74" src="../../_images/image873.png" style="width: 5.33708in; height: 2.82292in;" /></a></p>
+<ol class="arabic simple" start="4">
+<li>Click the <strong>SAVE</strong> button on the next window</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image883.png"><img alt="image75" src="../../_images/image883.png" style="width: 5.30000in; height: 1.15790in;" /></a></p>
+<ol class="arabic simple" start="5">
+<li>Now client the ending Deny.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image893.png"><img alt="image76" src="../../_images/image893.png" style="width: 5.30000in; height: 1.85127in;" /></a></p>
+<ol class="arabic simple" start="6">
+<li>In the pop-up window change it to Allow and click the <strong>SAVE</strong>
+button.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image903.png"><img alt="image77" src="../../_images/image903.png" style="width: 5.30000in; height: 0.66807in;" /></a></p>
+<ol class="arabic simple" start="7">
+<li>Then click the Apply Access Policy link at the top left.</li>
+</ol>
+<p><strong>TEST 1</strong></p>
+<p><a class="reference internal" href="../../_images/image624.png"><img alt="image78" src="../../_images/image624.png" style="width: 5.24002in; height: 3.46875in;" /></a></p>
+<ol class="arabic simple">
+<li>Return to the browser or tab you are using for access to
+<strong>https://10.128.10.100</strong>. Restart a new session if necessary.</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Username: <strong>student</strong></li>
+<li>Password: <strong>password</strong></li>
+</ul>
+</div></blockquote>
+<p><a class="reference internal" href="../../_images/image917.png"><img alt="image79" src="../../_images/image917.png" style="width: 5.24301in; height: 2.67708in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Did we receive an error this time after the logon page?</li>
+<li>Did the Message Box display?</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image923.png"><img alt="image80" src="../../_images/image923.png" style="width: 5.30000in; height: 1.49559in;" /></a></p>
+<ol class="arabic simple" start="4">
+<li>Keep the message box display there and move to the other browser to
+review the Manage Sessions menu.</li>
+<li>Does the Manage Sessions menu show the Username this time?</li>
+<li>Is the Status showing a Blue Square or Green Circle? Why?</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image933.png"><img alt="image81" src="../../_images/image933.png" style="width: 5.30000in; height: 1.53719in;" /></a></p>
+<ol class="arabic simple" start="7">
+<li>Click the session ID to review the details for any new messages.</li>
+<li>If things worked correctly you should see a message in the details
+stating, “Session deleted due to user inactivity or errors”</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image943.png"><img alt="image82" src="../../_images/image943.png" style="width: 5.30000in; height: 1.36501in;" /></a></p>
+<ol class="arabic simple" start="9">
+<li>If you look back at the other browser window you should notice a
+Session Expired/Timeout message is being displayed.</li>
+</ol>
+<p><strong>STEP 2</strong></p>
+<p><a class="reference internal" href="../../_images/image843.png"><img alt="image83" src="../../_images/image843.png" style="width: 5.30000in; height: 0.76798in;" /></a></p>
+<ol class="arabic simple">
+<li>Navigate back to Access  Profiles/Policies  Access Profiles
+(Per-Session Policies). Click on <strong>Agility-Lab-Access-Profile</strong></li>
+</ol>
+<p><a class="reference internal" href="../../_images/image953.png"><img alt="image84" src="../../_images/image953.png" style="width: 5.27083in; height: 2.63542in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Access Policy Timeout from 30 seconds back to <strong>300</strong> seconds by
+removing the check from the custom column.</li>
+<li>Click the <strong>UPDATE</strong> button at the bottom of the page.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image963.png"><img alt="image85" src="../../_images/image963.png" style="width: 5.30000in; height: 0.65187in;" /></a></p>
+<ol class="arabic simple" start="4">
+<li>Click Apply Access Policy link at the top left of the page.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image973.png"><img alt="image86" src="../../_images/image973.png" style="width: 5.30000in; height: 1.74143in;" /></a></p>
+<ol class="arabic simple" start="5">
+<li>Finalize the update by confirming the box is checked next to the
+profile and clicking <strong>APPLY ACESS POLICY</strong></li>
+</ol>
+<p><strong>TEST 2</strong></p>
+<p><a class="reference internal" href="../../_images/image624.png"><img alt="image87" src="../../_images/image624.png" style="width: 5.27083in; height: 3.48915in;" /></a></p>
+<ol class="arabic simple">
+<li>Now go back and restart the user session and logon.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image917.png"><img alt="image88" src="../../_images/image917.png" style="width: 5.16140in; height: 2.63542in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li><strong>Do NOT</strong> click the message box link “Click here to continue”</li>
+<li>Leave the message box message displayed for the time.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image983.png"><img alt="image89" src="../../_images/image983.png" style="width: 5.30000in; height: 1.50820in;" /></a></p>
+<ol class="arabic simple" start="4">
+<li>Go to the other browser/tab and open the Manage Sessions menu.</li>
+<li>Your session should be there but the Status icon should still be a Blue Square.</li>
+<li>Click on your Session ID</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image993.png"><img alt="image90" src="../../_images/image993.png" style="width: 5.30000in; height: 1.68697in;" /></a></p>
+<ol class="arabic simple" start="7">
+<li>Click Built-in Reports</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1003.png"><img alt="image91" src="../../_images/image1003.png" style="width: 5.30000in; height: 1.22439in;" /></a></p>
+<ol class="arabic simple" start="8">
+<li>Click on All Sessions report, then choose Run Report on the pop-up menu.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1016.png"><img alt="image92" src="../../_images/image1016.png" style="width: 5.30000in; height: 0.79244in;" /></a></p>
+<ol class="arabic simple" start="9">
+<li>Click the Session Variables for your current session.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1033.png"><img alt="image93" src="../../_images/image1033.png" style="width: 5.30972in; height: 2.69931in;" /></a></p>
+<ol class="arabic simple" start="10">
+<li>Do you now have Session Variables being displayed for this session? If so why?</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1052.png"><img alt="image94" src="../../_images/image1052.png" style="width: 5.30972in; height: 0.59444in;" /></a></p>
+<ol class="arabic simple" start="11">
+<li>Click the All Sessions tab and look at the column labeled Active. Does it show a Y or N in the column?</li>
+</ol>
+<p>Note that session variables will only be displayed for Active sessions.
+Since you placed a message box in the VPE to pause policy execution the
+session is seen as active. This provides you the ability to now review
+Session Variables that APM has collected up to this point in the
+policies execution.</p>
+<p><a class="reference internal" href="../../_images/image917.png"><img alt="image95" src="../../_images/image917.png" style="width: 5.26341in; height: 2.68750in;" /></a></p>
+<ol class="arabic simple" start="12">
+<li>Now in the user browser click the link in the Message Box.</li>
+</ol>
+<p>If it timed out then restart and this time click through the message box
+link.</p>
+<p><a class="reference internal" href="../../_images/image1072.png"><img alt="image96" src="../../_images/image1072.png" style="width: 5.30972in; height: 0.75764in;" /></a></p>
+<ol class="arabic simple" start="13">
+<li>Now review the Active Sessions menu and note what icon is shown in the status column. Green Circle finally? Success!!</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1092.png"><img alt="image97" src="../../_images/image1092.png" style="width: 5.30972in; height: 1.15208in;" /></a></p>
+<ol class="arabic simple" start="14">
+<li>If you now click the Session ID you will see that the Policy has reached an ending Allow thus the Access Policy Result is now showing we have been granted LTM+APM_Mode access.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1116.png"><img alt="image98" src="../../_images/image1116.png" style="width: 5.30972in; height: 2.97292in;" /></a></p>
+<ol class="arabic simple" start="15">
+<li>Now open the All Sessions report once more to review the Session Variables collected.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1132.png"><img alt="image99" src="../../_images/image1132.png" style="width: 5.30972in; height: 0.60972in;" /></a></p>
+<ol class="arabic simple" start="16">
+<li>Click the logon folder in the Session Variables page that opens for your session.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1152.png"><img alt="image100" src="../../_images/image1152.png" style="width: 5.30972in; height: 0.93889in;" /></a></p>
+<ol class="arabic simple" start="17">
+<li>Click the folder icon named <em>last</em> to expand its contents.</li>
+</ol>
+<p>Notice on the left column labeled Variable Name above and to the right
+the next column is Variable Value and the third column is Variable ID.
+If you look at the Variable Name of username you will see to the right
+its value is recorded as student as you entered it in the logon page.
+The next column displays APM’s matching session Variable ID for this
+information. You will see that the naming convention follows the session
+hierarchy starting with session. then the first folder logon. then the
+next folder last. then finally the Variable Name of Username.</p>
+<p>We will use some session variables in the next lab to GET and SET
+information for the users session.</p>
+</div>
+<div class="section" id="session-variables-setting-and-retrieving-some-quick-information">
+<h2>Session Variables – Setting and Retrieving (Some Quick Information)<a class="headerlink" href="#session-variables-setting-and-retrieving-some-quick-information" title="Permalink to this headline">¶</a></h2>
+<p>This section will provide some guidance on how to both retrieve and set
+session variables within a policy for a user’s session. Session
+Variables are very useful in many areas of policy execution. They can be
+used to assist in areas like authentication or single sign-on or
+assigning resource items for users based on information APM can collect
+from the backend AAA server and its associated directory.</p>
+<p>Currently cached session Variables are available in APM Reports for
+review by an administrator. Additional available variables can always be
+found in the APM Configuration Guides. What is really nice is that APM
+is not limited to only having awareness of Session Variable it collects
+from the user session establishment or from the AAA server,
+administrators can actually create or set their own custom session
+variables for use within a policy. This means that an administrator
+could create new session variables via the VPE’s Variable Assign action
+or session variables could even be set from an iRule attached to a
+virtual server. This means that information that the LTM VIP can see or
+be gathered via an iRule could then be set as a session variable that
+could then be retrieved and used within the VPE.</p>
+<div class="section" id="about-session-variable-names">
+<h3>About Session Variable Names<a class="headerlink" href="#about-session-variable-names" title="Permalink to this headline">¶</a></h3>
+<p>The name of a session variable consists of multiple hierarchical nodes
+that are separated by periods (.):</p>
+<p><a class="reference internal" href="../../_images/image1162.png"><img alt="image101" src="../../_images/image1162.png" style="width: 5.30303in; height: 4.37500in;" /></a></p>
+</div>
+<div class="section" id="session-variable-reference">
+<h3>Session Variable Reference<a class="headerlink" href="#session-variable-reference" title="Permalink to this headline">¶</a></h3>
+<p>APM Session Variable references are provided in APM documentation.
+Current release information can be found at the following link:
+<a class="reference external" href="https://support.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-visual-policy-editor-13-0-0/5.html">https://support.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-visual-policy-editor-13-0-0/5.html</a></p>
+<p><strong>Partial Session Variable list</strong></p>
+<p><a class="reference internal" href="../../_images/image1172.png"><img alt="image102" src="../../_images/image1172.png" style="width: 7.12660in; height: 6.38679in;" /></a></p>
+</div>
+<div class="section" id="session-variable-categorization">
+<h3>Session Variable Categorization<a class="headerlink" href="#session-variable-categorization" title="Permalink to this headline">¶</a></h3>
+<p>While these are not formal categories, Session Variables fall under
+three general categories:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="54%" />
+<col width="46%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Category</th>
+<th class="head">Examples</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Variables returned by Access Policy actions</td>
+<td><ul class="first last simple">
+<li>Active Directory query results</li>
+<li>Antivirus Check results</li>
+<li>Windows Info and Registry check results</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>Special purpose user variables</td>
+<td><ul class="first last simple">
+<li>Lease Pools</li>
+<li>Client IP assigned to a client session</li>
+<li>Username and Password</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>Network access resource variables and attributes</td>
+<td><ul class="first last simple">
+<li>Split tunneling</li>
+<li>DNS Settings</li>
+<li>Compression, etc.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="active-session-variables">
+<h3>Active Session Variables<a class="headerlink" href="#active-session-variables" title="Permalink to this headline">¶</a></h3>
+<p>Below is a short breakdown of information gathered and cached during an
+Active session. Additional information can be gathered from the results
+of End Point checks when they are put into a policy. These would display
+as folders like check_av or check_fw if the actions were added to the
+policy</p>
+<p><a class="reference internal" href="../../_images/image1182.png"><img alt="image103" src="../../_images/image1182.png" style="width: 5.19522in; height: 2.69811in;" /></a></p>
+</div>
+<div class="section" id="session-variable-manipulation-via-tcl">
+<h3>Session Variable Manipulation via TCL<a class="headerlink" href="#session-variable-manipulation-via-tcl" title="Permalink to this headline">¶</a></h3>
+<p>Variables can be parsed, modified, manipulated, etc using TCL. Although
+the tables below are not an exhaustive reference for writing and using
+TCL expressions, it includes some common operators and syntax rules.</p>
+<p><strong>Standard Operators</strong></p>
+<p>You can use TCL standard operators with most BIG-IP® Access Policy
+Manager® rules. You can find a full list of these operators in the TCL
+online manual, at <a class="reference external" href="http://www.tcl.tk/man/tcl8.5/TclCmd/expr.htm">http://www.tcl.tk/man/tcl8.5/TclCmd/expr.htm</a>. Standard
+operators include:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="5%" />
+<col width="95%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operator</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>- + ~ !</strong></td>
+<td>Unary minus, unary plus, bit-wise NOT, logical NOT. None of these operators may be applied to string operands, and bit-wise NOT may be applied only to integers.</td>
+</tr>
+<tr class="row-odd"><td><strong>**</strong></td>
+<td>Exponentiation. Valid for any numeric operands.</td>
+</tr>
+<tr class="row-even"><td><strong>* / %</strong></td>
+<td>Multiply, divide, remainder. None of these operators may be applied to string operands, and remainder may be applied only to integers. The remainder will always have the same sign as the divisor and an absolute value smaller than the divisor.</td>
+</tr>
+<tr class="row-odd"><td><strong>+ -</strong></td>
+<td>Add and subtract. Valid for any numeric operands.</td>
+</tr>
+<tr class="row-even"><td><strong>&lt;&lt; &gt;&gt;</strong></td>
+<td>Left and right shift. Valid for integer operands only. A right shift always propagates the sign bit.</td>
+</tr>
+<tr class="row-odd"><td><strong>&lt; &gt; &lt;= &gt;=</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Boolean less than, greater than, less than or equal to, and greater than or equal to. Each operator produces 1 if the condition is true, 0 otherwise. These operators may be applied to strings as well as numeric operands, in which case string comparison is used.</td>
+</tr>
+<tr class="row-odd"><td><strong>== !=</strong></td>
+<td>Boolean equal to and not equal to. Each operator produces a zero/one result. Valid for all operand types.</td>
+</tr>
+<tr class="row-even"><td><strong>eq ne</strong></td>
+<td>Boolean string equal to and string not equal to. Each operator produces a zero/one result. The operand types are interpreted only as strings.</td>
+</tr>
+<tr class="row-odd"><td><strong>in ni</strong></td>
+<td>List containment and negated list containment. Each operator produces a zero/one result and treats its first argument as a string and its second argument as a Tcl list. The in operator indicates whether the first argument is a member of the second argument list; the ni operator inverts the sense of the result.</td>
+</tr>
+<tr class="row-even"><td><strong>&amp;</strong></td>
+<td>Bit-wise AND. Valid for integer operands only.</td>
+</tr>
+<tr class="row-odd"><td><strong>^</strong></td>
+<td>Bit-wise exclusive OR. Valid for integer operands only.</td>
+</tr>
+<tr class="row-even"><td><strong>|</strong></td>
+<td>Bit-wise OR. Valid for integer operands only.</td>
+</tr>
+<tr class="row-odd"><td><strong>&amp;&amp;</strong></td>
+<td>Logical AND. Produces a 1 result if both operands are non-zero, 0 otherwise. Valid for boolean and numeric (integers or floating-point) operands only.</td>
+</tr>
+<tr class="row-even"><td><strong>||</strong></td>
+<td>Logical OR. Produces a 0 result if both operands are zero, 1 otherwise. Valid for boolean and numeric (integers or floating-point) operands only.</td>
+</tr>
+<tr class="row-odd"><td><strong>x?y:z</strong></td>
+<td>If-then-else, as in C. If x evaluates to non-zero, then the result is the value of y. Otherwise the result is the value of z. The x operand must have a boolean or numeric value.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Standard Operators</strong></p>
+<p>A rule operator compares two operands in an expression. In addition to
+using the TCL standard operators, you can use the operators listed
+below.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operator</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>contains</strong></td>
+<td>Tests if one string contains another string.</td>
+</tr>
+<tr class="row-odd"><td><strong>ends_with</strong></td>
+<td>Tests if one string ends with another string</td>
+</tr>
+<tr class="row-even"><td><strong>equals</strong></td>
+<td>Tests if one string equals another string</td>
+</tr>
+<tr class="row-odd"><td><strong>matches</strong></td>
+<td>Tests if one string matches another string</td>
+</tr>
+<tr class="row-even"><td><strong>matches_regex</strong></td>
+<td>Tests if one string matches a regular expression</td>
+</tr>
+<tr class="row-odd"><td><strong>starts_with</strong></td>
+<td>Tests if one string starts_with another string</td>
+</tr>
+<tr class="row-even"><td><strong>switch</strong></td>
+<td>Evaluates one of several scripts, depending on a given value</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Logical Operators</strong></p>
+<p>Logical operators are used to compare two values.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operator</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>and</strong></td>
+<td>Performs a logical and comparison between two values</td>
+</tr>
+<tr class="row-odd"><td><strong>not</strong></td>
+<td>Performs a logical not action on a value</td>
+</tr>
+<tr class="row-even"><td><strong>or</strong></td>
+<td>Performs a logical or comparison between two values</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="getting-setting-session-variables">
+<h3>Getting/Setting Session Variables<a class="headerlink" href="#getting-setting-session-variables" title="Permalink to this headline">¶</a></h3>
+<p>During the pre-logon sequence, using the Visual Policy Editor (VPE) you
+can get and set Session Variables. The following are some quick
+examples.</p>
+<ul>
+<li><p class="first">To <strong>set/modify</strong> a variable: Variable Assign action</p>
+</li>
+<li><div class="first line-block">
+<div class="line">To <strong>get</strong> a value the last username entered by a user, use expr or
+return:</div>
+<div class="line">expr { [mcget {session.logon.last.username}]}</div>
+</div>
+</li>
+</ul>
+<p><strong>expr</strong> evaluates an expression, whereas <strong>return</strong> simply returns the
+result. For example, we have a two custom variables:</p>
+<ul class="simple">
+<li>session.custom.value1 = 3</li>
+<li>session.custom.value2 = 4</li>
+</ul>
+<p>Using <strong>expr</strong> we can construct the following expression, this would
+return a value of 7 (i.e. the evaluation of 3+4):</p>
+<blockquote>
+<div>expr { “[mcget session.custom.value1] + [mcget
+session.custom.value2]” }.</div></blockquote>
+<p>Using <strong>return</strong> we can construct the following expression, this would
+return simply “3+4” as shown.</p>
+<blockquote>
+<div>return { “[mcget session.custom.value1] + [mcget
+session.custom.value2]” }</div></blockquote>
+</div>
+<div class="section" id="using-irules">
+<h3>Using iRules<a class="headerlink" href="#using-irules" title="Permalink to this headline">¶</a></h3>
+<p>In all the “Access” events</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">ACCESS::session</span> <span class="pre">data</span> <span class="pre">get/set</span> <span class="pre">“variable\_name”</span> <span class="pre">[“value”]</span></code></div></blockquote>
+</div>
+<div class="section" id="set-secure-variables">
+<h3>Set Secure Variables<a class="headerlink" href="#set-secure-variables" title="Permalink to this headline">¶</a></h3>
+<p>You can also set Secure Variables. The value of a secure session
+variable is stored as encrypted in the session db. The value is not
+displayed as part of session report in UI, nor is it logged as part of
+logging agent. Secure variables require the -secure flag, both for mcget
+and access::session data get/set.</p>
+<p><a class="reference internal" href="../../_images/image1192.png"><img alt="image104" src="../../_images/image1192.png" style="width: 4.10232in; height: 2.00000in;" /></a></p>
+<p>Review these two examples below. The first is a Variable Assign action
+that is SETTING the Session Variable ID of “session.logon.last.upn” with
+the information extracted from an x509 Client Certificate that was
+presented by the user’s computer/browser upon connection to the VIP.</p>
+<p><a class="reference internal" href="../../_images/image1202.png"><img alt="image105" src="../../_images/image1202.png" style="width: 5.42016in; height: 2.34906in;" /></a></p>
+<p>The second example show a message box displaying a Session Variable
+value by calling out the Session Variable ID in the Message Box for the
+user to see.</p>
+<p><a class="reference internal" href="../../_images/image1215.png"><img alt="image106" src="../../_images/image1215.png" style="width: 5.40905in; height: 2.59434in;" /></a></p>
+</div>
+<div class="section" id="session-variable-exercise">
+<h3>Session Variable Exercise<a class="headerlink" href="#session-variable-exercise" title="Permalink to this headline">¶</a></h3>
+<p>The following are some exercises to demonstrate how session variables
+can be utilized.</p>
+<p><strong>STEP 1</strong></p>
+<p><a class="reference internal" href="../../_images/image1222.png"><img alt="image107" src="../../_images/image1222.png" style="width: 5.30000in; height: 0.85031in;" /></a></p>
+<ol class="arabic simple">
+<li>Open the APM VPE for the <strong>Agility-Lab-Access-Profile</strong> Access Policy
+we have been working with.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1232.png"><img alt="image108" src="../../_images/image1232.png" style="width: 5.30000in; height: 0.84337in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Edit the Message Box in the VPE.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1242.png"><img alt="image109" src="../../_images/image1242.png" style="width: 5.28746in; height: 3.27358in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>In the Message text box enter: <strong>My username is:
+%{session.logon.last.username}</strong> Then click the <strong>Save</strong> button</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image903.png"><img alt="image110" src="../../_images/image903.png" style="width: 5.30000in; height: 0.66807in;" /></a></p>
+<ol class="arabic simple" start="4">
+<li>Then click Apply Access Policy</li>
+</ol>
+<p><strong>TEST 1</strong></p>
+<p><a class="reference internal" href="../../_images/image624.png"><img alt="image111" src="../../_images/image624.png" style="width: 5.30000in; height: 3.50845in;" /></a></p>
+<ol class="arabic simple">
+<li>Now logon with the “student” username to the test site.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1252.png"><img alt="image112" src="../../_images/image1252.png" style="width: 5.11837in; height: 2.00000in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>When the message box appears, you should see a message stating,
+“<strong>My username is: student</strong>”. Was it successful?</li>
+</ol>
+<p><strong>STEP 2</strong></p>
+<p><a class="reference internal" href="../../_images/image1262.png"><img alt="image113" src="../../_images/image1262.png" style="width: 5.30000in; height: 0.84941in;" /></a></p>
+<ol class="arabic simple">
+<li>Go back into the VPE</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1272.png"><img alt="image114" src="../../_images/image1272.png" style="width: 5.30972in; height: 4.79653in;" /></a></p>
+<p><a class="reference internal" href="../../_images/image1281.png"><img alt="image115" src="../../_images/image1281.png" style="width: 5.30000in; height: 1.20644in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Add a Variable Assign action from the Assignment action tab and place
+it before the Message Box action.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1292.png"><img alt="image116" src="../../_images/image1292.png" style="width: 5.30000in; height: 1.82419in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>When the properties screen opens, click the <strong>Add New Entry</strong> button.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1302.png"><img alt="image117" src="../../_images/image1302.png" style="width: 5.30000in; height: 1.69202in;" /></a></p>
+<ol class="arabic simple" start="4">
+<li>Then click the “Change” link.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1316.png"><img alt="image118" src="../../_images/image1316.png" style="width: 5.32157in; height: 2.28302in;" /></a></p>
+<ol class="arabic simple" start="5">
+<li>A window will pop up with <em>Custom Variable</em> on the left and <em>Custom
+Expression</em> on the right.</li>
+</ol>
+<p>You will notice both boxes are currently empty.</p>
+<p><a class="reference internal" href="../../_images/image1322.png"><img alt="image119" src="../../_images/image1322.png" style="width: 5.34906in; height: 4.64626in;" /></a></p>
+<ol class="arabic simple" start="6">
+<li>Often you may forget how to start off with the variable name or the
+expression so a trick you can use to get you started is first select
+a pre-defined variable on the left side and a AAA attribute on the
+right side and then reselect custom variable and custom expression.
+This will populate each box with example data that you can now edit.</li>
+</ol>
+<p><strong>*This is not a required step, just a tip!*</strong></p>
+<p><a class="reference internal" href="../../_images/image1332.png"><img alt="image120" src="../../_images/image1332.png" style="width: 5.31606in; height: 2.28302in;" /></a></p>
+<ol class="arabic simple" start="7">
+<li>On the Custom Variable side type: <strong>session.custom.mynewvar</strong> (Be
+sure to make it lowercase). On the Custom Expression side type:
+<strong>mcget {session.user.clientip}</strong> (There is a space between mcget and
+the { bracket)</li>
+<li>Click the <strong>Finished</strong> button.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1342.png"><img alt="image121" src="../../_images/image1342.png" style="width: 5.34736in; height: 2.14151in;" /></a></p>
+<ol class="arabic simple" start="9">
+<li>Click the <strong>Save</strong> button.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1352.png"><img alt="image122" src="../../_images/image1352.png" style="width: 5.30000in; height: 1.20906in;" /></a></p>
+<ol class="arabic simple" start="10">
+<li>Click on the Message Box.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1362.png"><img alt="image123" src="../../_images/image1362.png" style="width: 5.40652in; height: 2.17924in;" /></a></p>
+<ol class="arabic simple" start="11">
+<li>After the closing <strong>}</strong> bracket in the first line of the message section add a space and then type <strong>&lt;br&gt;</strong></li>
+<li>Then on the next line type, <strong>My Client IP is: %{session.custom.mynewvar}</strong></li>
+<li>Then click the <strong>Save</strong> button.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1372.png"><img alt="image124" src="../../_images/image1372.png" style="width: 5.30000in; height: 0.67850in;" /></a></p>
+<ol class="arabic simple" start="14">
+<li>Then click Apply Access Policy.</li>
+</ol>
+<p><strong>TEST 2</strong></p>
+<p><a class="reference internal" href="../../_images/image624.png"><img alt="image125" src="../../_images/image624.png" style="width: 5.32075in; height: 3.52219in;" /></a></p>
+<ol class="arabic simple">
+<li>Now logon to the test site as a user again and review the message box
+text.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1382.png"><img alt="image126" src="../../_images/image1382.png" style="width: 5.29448in; height: 2.56604in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Does it display your client IP address?</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1402.png"><img alt="image127" src="../../_images/image1402.png" style="width: 5.30972in; height: 2.95764in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>Now run the All Sessions Report and review the View Session Variables
+for the active SessionID. (Access Overview Access Reports)</li>
+<li>Notice the folder icon named custom and the corresponding Variable ID
+of session.custom. This was generated automatically during the
+Variable Assign action that you added to the policy. When you set the
+Custom Variable to session.custom.mynewvar APM used the next word
+after the session as the new container (custom) for variable
+(mynewvar).</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1416.png"><img alt="image128" src="../../_images/image1416.png" style="width: 5.30000in; height: 0.31129in;" /></a></p>
+<ol class="arabic simple" start="5">
+<li>If you expand custom folder you will notice a new Variable named
+mynewvar and in the next column you will see your client ip address
+and in the third column the variable id of session.custom.mynewvar</li>
+</ol>
+<p>As you can see this could be expanded upon to be very useful. For
+example, maybe you are enabling two-factor authentication for both
+Active Directory and RSA Secure ID. Well the AAA server authentication
+Action objects expect to see a specific session variable name sent to
+them for so that they can correctly parse that data and verify against
+the AAA server. As an example both the AD Auth and the RSA Auth expect
+to see session.logon.last.password as the variable used to hold the
+password value. However, if you create a logon page with three input
+fields, one for username, a second for AD password and the third for the
+RSA Token/PIN then they must each have their own unique post and session
+variable name as they are configured in the Logon Page object.</p>
+<p>This means that as the third variable for the RSA toke/pin is passed to
+APM no longer as session.logon.last.password because the AD Password
+field was already set to use that variable on the logon page. What do we
+do now?</p>
+<p>Variable Assign to the rescue, take a look at this below example to fix
+this problem as it mimics what we just accomplished with the
+session.custom.mynewvar exercise. Consider the following screen shots.</p>
+<p><a class="reference internal" href="../../_images/image1422.png"><img alt="image129" src="../../_images/image1422.png" style="width: 7.13208in; height: 4.56955in;" /></a></p>
+</div>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="../module3/module3.html" title="Lab 3: General Troubleshooting" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="../module5/module5.html" title="Lab 5: Command Line Tools" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/clouddocs.js"></script>
+  <script src="/assets/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

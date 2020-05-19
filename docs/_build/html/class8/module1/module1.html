@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 1: APM Troubleshooting Lab Object Preparation (GUI)</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 1: APM Troubleshooting Lab Object Preparation (GUI)"/>
+  <meta name="product" content="F5 Identity and Access Management Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-05-19 03:36:25"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Identity and Access Management Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab 1: APM Troubleshooting Lab Object Preparation (GUI) &#8212; F5 Identity and Access Management Solutions  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 2: APM Troubleshooting Lab Object Preparation (TMSH)" href="../module2/module2.html" />
+    <link rel="prev" title="Lab Environment" href="../labinfo.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      <!-- javascript code to maintain the sidebar scroll positon when loaded -->
+      <script type="text/javascript">
+        $(function() {
+          if (localStorage.tempScrollTop) {
+            $('#sidebar').scrollTop(localStorage.tempScrollTop);
+          }
+        });
+        $('#sidebar').on("scroll", function() {
+          localStorage.setItem("tempScrollTop", $('#sidebar').scrollTop());
+        });
+      </script>
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Identity and Access Management Solutions  </h5>
+        
+<div id="searchbox" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" class="search" name="q" placeholder=" Search..." />
+    <button type="submit" class="btn btn-info navbar-btn"><i class="fa fa-search"></i></button>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">Class 1: SAML Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">Class 2: OAuth Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">Class 3: SWG - Securing Outbound Internet Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class4/class4.html">Class 4: SAML Identity Provider (IdP) Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class5/class5.html">Class 5: AD FS Proxy Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class6/class6.html">Class 6: Federating Common Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class7/class7.html">Class 7: Introduction to Universal Access</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class8.html">Class 8: Troubleshooting Universal Access</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labinfo.html">Lab Environment</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 1: APM Troubleshooting Lab Object Preparation (GUI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module2/module2.html">Lab 2: APM Troubleshooting Lab Object Preparation (TMSH)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module3/module3.html">Lab 3: General Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module4/module4.html">Lab 4: Visual Policy Editor (VPE) &amp; Session Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module5/module5.html">Lab 5: Command Line Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../conclusion.html">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../class9/class9.html">Class 9: Multi-Factor Auth for Cloud Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class10/class10.html">Class 10: Privileged User Access</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 1: APM Troubleshooting Lab Object Preparation (GUI)</a><ul>
+<li><a class="reference internal" href="#connect-to-the-lab">Connect to the Lab</a></li>
+<li><a class="reference internal" href="#dns-resolver-for-system-configuration">DNS Resolver for System Configuration</a></li>
+<li><a class="reference internal" href="#ntp-server-for-system-configuration">NTP Server for System Configuration</a></li>
+<li><a class="reference internal" href="#access-policy-apm-aaa-server-active-directory-object-creation">Access Policy (APM) AAA Server – Active Directory Object Creation</a></li>
+<li><a class="reference internal" href="#access-policy-apm-sso-configuration-ntlmv1">Access Policy (APM) SSO Configuration – NTLMv1</a></li>
+<li><a class="reference internal" href="#access-policy-apm-access-profile-creation">Access Policy (APM) Access Profile Creation</a></li>
+<li><a class="reference internal" href="#local-traffic-ltm-pool-and-member-creation">Local Traffic (LTM) Pool and Member Creation</a></li>
+<li><a class="reference internal" href="#local-traffic-ltm-virtual-server-creation">Local Traffic (LTM) Virtual Server Creation</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Identity and Access Management Solutions</a>
+              &gt; <a href="../class8.html">Class 8: Troubleshooting Universal Access</a>
+
+          <span class="right">
+             <a href="../../_sources/class8/module1/module1.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/osantiago774/f5-agility-labs-iam">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-1-apm-troubleshooting-lab-object-preparation-gui">
+<h1>Lab 1: APM Troubleshooting Lab Object Preparation (GUI)<a class="headerlink" href="#lab-1-apm-troubleshooting-lab-object-preparation-gui" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You only need to perform EITHER Lab 1 OR Lab 2.  They accomplish the same goal, but using different methods.  Lab 2 gets the Lab Preparation using TMSH</p>
+</div>
+<p>The purpose of this lab is to preconfigure some objects that will be
+used throughout the other labs. These objects are as follows:</p>
+<ul class="simple">
+<li>Domain Name Services (DNS) Resolver</li>
+<li>Network Time Protocol (NTP) Server</li>
+<li>Access Policy (APM) AAA Server – Active Directory</li>
+<li>Access Policy (APM) SSO Configuration – NTLMv1</li>
+<li>Access Policy (APM) Access Profile</li>
+<li>Local Traffic (LTM) Pool and Member</li>
+<li>Local Traffic (LTM) Virtual Server</li>
+</ul>
+<div class="section" id="connect-to-the-lab">
+<h2>Connect to the Lab<a class="headerlink" href="#connect-to-the-lab" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../../_images/image320.png"><img alt="image1" src="../../_images/image320.png" style="width: 5.30000in; height: 3.34687in;" /></a></p>
+<ol class="arabic simple">
+<li>Establish an RDP connection to your Jump Host and double-click on the
+<strong>BIG-IP</strong> Chrome shortcut on the Windows desktop.<ul>
+<li>User: agility</li>
+<li>Password: Agility1</li>
+</ul>
+</li>
+<li>Ignore the certificate warning.</li>
+<li>Login into the BIG-IP Configuration Utility with the desktop icon (or
+Favorite link in Chrome) with the following credentials:<ul>
+<li>User: <strong>admin</strong></li>
+<li>Password: <strong>admin</strong></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="dns-resolver-for-system-configuration">
+<h2>DNS Resolver for System Configuration<a class="headerlink" href="#dns-resolver-for-system-configuration" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../../_images/image420.png"><img alt="image2" src="../../_images/image420.png" style="width: 5.30000in; height: 1.87749in;" /></a></p>
+<ol class="arabic simple">
+<li>Create a DNS entry by selecting: System-&gt;Configuration-&gt;Device-&gt;DNS</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image519.png"><img alt="image3" src="../../_images/image519.png" style="width: 5.28125in; height: 7.47544in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>In the Properties Section for DNS Lookup Server List, enter
+<strong>10.128.20.100</strong> in the Address field and click the <strong>ADD</strong> button.</li>
+<li>Scroll down to the DNS Search Domain List section and enter
+<strong>agilitylab.com</strong> in the Address field and click the <strong>ADD</strong> button.</li>
+<li>Click the <strong>UPDATE</strong> button at the bottom of the page to save the
+changes you just made.</li>
+</ol>
+</div>
+<div class="section" id="ntp-server-for-system-configuration">
+<h2>NTP Server for System Configuration<a class="headerlink" href="#ntp-server-for-system-configuration" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../../_images/image619.png"><img alt="image4" src="../../_images/image619.png" style="width: 5.30000in; height: 1.48855in;" /></a></p>
+<ol class="arabic simple">
+<li>Create a NTP entry by selecting: System  Configuration  Device 
+NTP</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image719.png"><img alt="image5" src="../../_images/image719.png" style="width: 5.28125in; height: 3.99637in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>In the Properties Section for Time Server List, enter
+<strong>10.128.20.100</strong> in the Address field and click the <strong>ADD</strong> button.</li>
+<li>Click the <strong>UPDATE</strong> button at the bottom of the page to save the
+changes you just made.</li>
+</ol>
+</div>
+<div class="section" id="access-policy-apm-aaa-server-active-directory-object-creation">
+<h2>Access Policy (APM) AAA Server – Active Directory Object Creation<a class="headerlink" href="#access-policy-apm-aaa-server-active-directory-object-creation" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../../_images/image916.png"><img alt="image6" src="../../_images/image916.png" style="width: 5.30972in; height: 2.05069in;" /></a></p>
+<ol class="arabic simple">
+<li>Create a new AAA Server Object of type Active Directory by selecting:
+Access  Authentication  Active Directory</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1015.png"><img alt="image7" src="../../_images/image1015.png" style="width: 5.21875in; height: 0.71782in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Click the <strong>CREATE</strong> button on right side of page.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1115.png"><img alt="image8" src="../../_images/image1115.png" style="width: 5.21875in; height: 6.02240in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>Under General Properties type <strong>LAB_AD_AAA</strong> in the name field.</li>
+<li>In the Configuration Section, Click the radio button option next to
+<strong>Direct</strong> in the Server Connection row.</li>
+<li>In the Domain Name field enter <strong>agilitylab.com</strong></li>
+<li>Leave the Domain Controller, Admin Name and Admin Password fields
+blank for now.</li>
+<li>Click the <strong>FINISHED</strong> button at the bottom of the page to save your
+changes.</li>
+</ol>
+</div>
+<div class="section" id="access-policy-apm-sso-configuration-ntlmv1">
+<h2>Access Policy (APM) SSO Configuration – NTLMv1<a class="headerlink" href="#access-policy-apm-sso-configuration-ntlmv1" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../../_images/image1315.png"><img alt="image9" src="../../_images/image1315.png" style="width: 5.30972in; height: 2.66111in;" /></a></p>
+<ol class="arabic simple">
+<li>Create a new SSO Configuration Object of type NTLM by selecting:
+Access  Single Sign-On  NTLMV1</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1415.png"><img alt="image10" src="../../_images/image1415.png" style="width: 5.30000in; height: 0.79642in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Click the <strong>CREATE</strong> button on the right side of the page.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1614.png"><img alt="image11" src="../../_images/image1614.png" style="width: 5.30972in; height: 6.01667in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>In the Name field enter <strong>Agility_Lab_SSO_NTLM</strong></li>
+<li>Click the <strong>FINISHED</strong> button at the bottom.</li>
+</ol>
+</div>
+<div class="section" id="access-policy-apm-access-profile-creation">
+<h2>Access Policy (APM) Access Profile Creation<a class="headerlink" href="#access-policy-apm-access-profile-creation" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../../_images/image1814.png"><img alt="image12" src="../../_images/image1814.png" style="width: 5.30972in; height: 1.95069in;" /></a></p>
+<ol class="arabic simple">
+<li>Create a new APM Profile Object of type ALL by selecting: Access 
+Profiles/Policies  Access Profiles (Per-Session Policies)</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1914.png"><img alt="image13" src="../../_images/image1914.png" style="width: 5.30000in; height: 0.42589in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Click the <strong>CREATE</strong> button on the right side of the page.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image2112.png"><img alt="image14" src="../../_images/image2112.png" style="width: 5.30972in; height: 2.25208in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>In the Name field enter, <strong>Agility-Lab-Access-Profile</strong></li>
+<li>In the Profile Type drop down list select <strong>All</strong></li>
+<li><strong>In the Profile Scope drop down list select Profile</strong></li>
+</ol>
+<p><a class="reference internal" href="../../_images/image229.png"><img alt="image15" src="../../_images/image229.png" style="width: 5.23333in; height: 2.07270in;" /></a></p>
+<ol class="arabic simple" start="6">
+<li>In the Settings section click the checkbox to the right of Access
+Policy Timeout and change the value from 300, to <strong>30</strong>, seconds.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image235.png"><img alt="image16" src="../../_images/image235.png" style="width: 5.18567in; height: 2.05208in;" /></a></p>
+<ol class="arabic simple" start="7">
+<li>Scroll the bottom of the page and in the Language Settings section,
+click to highlight <strong>English</strong> in the Factory Builtin Languages box,
+then click the left <strong>&lt;&lt;</strong> arrows to move it to the left box labeled
+Accepted Languages.</li>
+<li>Click the <strong>FINISHED</strong> button at the bottom of the page to save your
+changes.</li>
+</ol>
+</div>
+<div class="section" id="local-traffic-ltm-pool-and-member-creation">
+<h2>Local Traffic (LTM) Pool and Member Creation<a class="headerlink" href="#local-traffic-ltm-pool-and-member-creation" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../../_images/image245.png"><img alt="image17" src="../../_images/image245.png" style="width: 5.25792in; height: 2.94792in;" /></a></p>
+<ol class="arabic simple">
+<li>Create a new LTM Pool and Member by selecting Local Traffic  Pools
+Pools List</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image255.png"><img alt="image18" src="../../_images/image255.png" style="width: 5.30000in; height: 0.88333in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Click the <strong>CREATE</strong> button on the right side of the page.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image265.png"><img alt="image19" src="../../_images/image265.png" style="width: 5.23958in; height: 5.90988in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>In the Name field enter <strong>Agility-Lab-Pool</strong></li>
+<li>In the Resources section, in the New Members area, enter
+<strong>10.128.20.100</strong> in the Address field.</li>
+<li>In the Service Port field, enter <strong>80</strong>, or select <strong>HTTP</strong> from the
+drop-down menu.</li>
+<li>Click the <strong>ADD</strong> button</li>
+<li>Click the <strong>FINISHED</strong> button at the bottom to save your changes.</li>
+</ol>
+</div>
+<div class="section" id="local-traffic-ltm-virtual-server-creation">
+<h2>Local Traffic (LTM) Virtual Server Creation<a class="headerlink" href="#local-traffic-ltm-virtual-server-creation" title="Permalink to this headline">¶</a></h2>
+<p>This lab will walk you through creating the Virtual Server we will use
+during the course of the lab. This Virtual Server will be used to
+associate Access Policies which will be evaluated when authenticating
+users.</p>
+<p><a class="reference internal" href="../../_images/image275.png"><img alt="image20" src="../../_images/image275.png" style="width: 5.28571in; height: 2.00000in;" /></a></p>
+<ol class="arabic simple">
+<li>Create an new Virtual Server by selecting Local Traffic  Virtual
+Servers  Virtual Server List</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image285.png"><img alt="image21" src="../../_images/image285.png" style="width: 5.30000in; height: 0.47834in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Click the <strong>CREATE</strong> button on the right side of the page.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image294.png"><img alt="image22" src="../../_images/image294.png" style="width: 5.27083in; height: 3.12743in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>Under the General Properties section, in the Name field enter
+<strong>Agility-LTM-VIP</strong></li>
+<li>In the Destination Address field enter <strong>10.128.10.100</strong></li>
+<li>In the Service Port fields enter <strong>443</strong>, or select <strong>HTTPS</strong> from
+the drop-down menu</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image304.png"><img alt="image23" src="../../_images/image304.png" style="width: 5.19792in; height: 5.54507in;" /></a></p>
+<ol class="arabic simple" start="6">
+<li>Under the Configuration section, in the HTTP Profile field use the
+drop-down menu to select <strong>http</strong></li>
+<li>In the SSL Profile (Client) field select <strong>clientssl</strong> from the
+Available profiles then use the <strong>&lt;&lt;</strong> left arrows to move it to the
+Selected box.</li>
+<li>Ensure VLAN and Tunnel Traffic is set to <strong>All VLANs and Tunnels</strong></li>
+<li>In the Source Address Translation field select <strong>Auto Map</strong> from the
+drop-down menu.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image3111.png"><img alt="image24" src="../../_images/image3111.png" style="width: 5.30913in; height: 2.26042in;" /></a></p>
+<ol class="arabic simple" start="10">
+<li>Scroll down to the Access Profile section, select <strong>Agility-Lab-Access-Profile</strong> from the drop-down menu.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image324.png"><img alt="image25" src="../../_images/image324.png" style="width: 5.30000in; height: 1.04073in;" /></a></p>
+<ol class="arabic simple" start="11">
+<li>Click the <strong>FINISHED</strong> button to save your changes.</li>
+</ol>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="../labinfo.html" title="Lab Environment" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="../module2/module2.html" title="Lab 2: APM Troubleshooting Lab Object Preparation (TMSH)" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/clouddocs.js"></script>
+  <script src="/assets/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

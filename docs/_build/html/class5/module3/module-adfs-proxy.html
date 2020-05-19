@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Module: Deploy ADFS Proxy Services</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Module: Deploy ADFS Proxy Services"/>
+  <meta name="product" content="F5 Identity and Access Management Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-05-19 03:36:25"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Identity and Access Management Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Module: Deploy ADFS Proxy Services &#8212; F5 Identity and Access Management Solutions  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Module: Additional Information and Troubleshooting Tips" href="../module4/module-additional.html" />
+    <link rel="prev" title="Module: Deploy ADFS Load Balancing Services" href="../module2/module-adfs-load-balancing.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      <!-- javascript code to maintain the sidebar scroll positon when loaded -->
+      <script type="text/javascript">
+        $(function() {
+          if (localStorage.tempScrollTop) {
+            $('#sidebar').scrollTop(localStorage.tempScrollTop);
+          }
+        });
+        $('#sidebar').on("scroll", function() {
+          localStorage.setItem("tempScrollTop", $('#sidebar').scrollTop());
+        });
+      </script>
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Identity and Access Management Solutions  </h5>
+        
+<div id="searchbox" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" class="search" name="q" placeholder=" Search..." />
+    <button type="submit" class="btn btn-info navbar-btn"><i class="fa fa-search"></i></button>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">Class 1: SAML Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">Class 2: OAuth Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">Class 3: SWG - Securing Outbound Internet Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class4/class4.html">Class 4: SAML Identity Provider (IdP) Lab</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class5.html">Class 5: AD FS Proxy Lab</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../labinfo/labinfo.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module1/module-validate-environment.html">Module: Connect and Validate Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module2/module-adfs-load-balancing.html">Module: Deploy ADFS Load Balancing Services</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Module: Deploy ADFS Proxy Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module4/module-additional.html">Module: Additional Information and Troubleshooting Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../conclusion.html">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../class6/class6.html">Class 6: Federating Common Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class7/class7.html">Class 7: Introduction to Universal Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class8/class8.html">Class 8: Troubleshooting Universal Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class9/class9.html">Class 9: Multi-Factor Auth for Cloud Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class10/class10.html">Class 10: Privileged User Access</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Module: Deploy ADFS Proxy Services</a><ul>
+<li><a class="reference internal" href="#change-client-to-point-at-big-ip-adfs-proxy-virtual-server">Change Client to Point at BIG-IP ADFS Proxy Virtual Server</a></li>
+<li><a class="reference internal" href="#deploy-adfs-iapp-for-adfs-proxy-with-ms-adfspip-support">Deploy ADFS iApp for ADFS Proxy (with MS-ADFSPIP support)</a></li>
+<li><a class="reference internal" href="#test-the-adfs-proxy-forms-authentication-functionality">Test the ADFS Proxy Forms Authentication Functionality</a></li>
+<li><a class="reference internal" href="#test-the-adfs-proxy-certificate-authentication-functionality">Test the ADFS Proxy Certificate Authentication Functionality</a></li>
+<li><a class="reference internal" href="#review-the-adfs-proxy-configuration">Review the ADFS Proxy Configuration</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Identity and Access Management Solutions</a>
+              &gt; <a href="../class5.html">Class 5: AD FS Proxy Lab</a>
+
+          <span class="right">
+             <a href="../../_sources/class5/module3/module-adfs-proxy.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/osantiago774/f5-agility-labs-iam">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="module-deploy-adfs-proxy-services">
+<h1>Module: Deploy ADFS Proxy Services<a class="headerlink" href="#module-deploy-adfs-proxy-services" title="Permalink to this headline">¶</a></h1>
+<p>In this module you will deploy ADFS Proxy functionality. The BIG-IP will
+perform the same role in front of ADFS as a Web Application Proxy (WAP)
+server does, supporting the protocol MS-ADFSPIP.</p>
+<div class="section" id="change-client-to-point-at-big-ip-adfs-proxy-virtual-server">
+<h2>Change Client to Point at BIG-IP ADFS Proxy Virtual Server<a class="headerlink" href="#change-client-to-point-at-big-ip-adfs-proxy-virtual-server" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Double click the BIG-IP ADFS Load Balancer desktop shortcut</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1104.png"><img alt="image0" src="../../_images/image1104.png" style="width: 0.84481in; height: 1.06481in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>You should see that the HOSTS file now points ADFS at the load
+balancing virtual server (which is not yet created)</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image225.png"><img alt="image1" src="../../_images/image225.png" style="width: 3.96296in; height: 1.30151in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>Close any open Chrome incognito windows</li>
+<li>Open a new Chrome window if not already open</li>
+<li>Right click the “ADFS Demo App” shortcut and open a new incognito window<ol class="loweralpha">
+<li>It should fail because you cannot access ADFS through the BIG-IP
+until you deploy the configuration.</li>
+<li>If it is still working, you may need to close Chrome and/or retry
+the HOSTS file shortcut.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="deploy-adfs-iapp-for-adfs-proxy-with-ms-adfspip-support">
+<h2>Deploy ADFS iApp for ADFS Proxy (with MS-ADFSPIP support)<a class="headerlink" href="#deploy-adfs-iapp-for-adfs-proxy-with-ms-adfspip-support" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Open the BIG-IP configuration interface</li>
+<li>Open iApps -&gt; Application Services -&gt; Applications</li>
+<li>Click Create</li>
+</ol>
+<p>Accept all default values except for those listed below.</p>
+<ol class="arabic simple" start="4">
+<li><strong>Name</strong>: <strong>adfs-proxy</strong></li>
+<li><strong>Template</strong>: <strong>f5.microsoft_adfs.v1.2.0rc7</strong></li>
+<li><strong>Access Policy Manager (BIG-IP APM)</strong><ol class="loweralpha">
+<li><strong>Would you like to configure BIG-IP as an ADFS Proxy?</strong><ol class="lowerroman">
+<li><strong>Yes, configure BIG-IP as an ADFS Proxy</strong></li>
+</ol>
+</li>
+<li><strong>What is the account to be used for establishing proxy trust with
+ADFS?</strong><ol class="lowerroman">
+<li><strong>admin&#64;f5demo.com</strong></li>
+</ol>
+</li>
+<li><strong>What is the password associated with that account?</strong><ol class="lowerroman">
+<li><strong>admin</strong></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>Establishing trust with ADFS requires username in UPN or
+domain\username format. This is true whether in the iApp or
+establishing trust manually.</p>
+<ol class="arabic simple" start="7">
+<li><strong>SSL Encryption</strong><ol class="loweralpha">
+<li><strong>Which SSL certificate do you want to use?</strong><ol class="lowerroman">
+<li><strong>internal-vlab.f5demo.com.crt</strong></li>
+</ol>
+</li>
+<li><strong>Which SSL private key do you want to use?</strong><ol class="lowerroman">
+<li><strong>internal-vlab.f5demo.com.key</strong></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>Note that this time we are doing SSL Bridging. This is required for the
+ADFS Proxy. Client certificate authentication can still be performed
+because BIG-IP supports MS-ADFSPIP.</p>
+<ol class="arabic" start="8">
+<li><p class="first"><strong>High Availability</strong></p>
+<ol class="loweralpha">
+<li><p class="first"><strong>What IP address do you want to use for the virtual server?</strong></p>
+<ol class="lowerroman simple">
+<li><strong>10.1.10.100</strong></li>
+</ol>
+<p>10.1.10.x is the external/DMZ network in this environment. Notice this
+is .10 not .20 this time.</p>
+</li>
+</ol>
+</li>
+</ol>
+<ol class="loweralpha simple">
+<li><strong>Which FQDN will clients use to access AD FS?</strong><ol class="lowerroman">
+<li><strong>adfs.vlab.f5demo.com</strong></li>
+</ol>
+</li>
+<li><strong>Which servers should be included in this pool?</strong><ol class="lowerroman">
+<li><strong>10.1.20.6</strong></li>
+<li>Click Add</li>
+<li><strong>10.1.20.7</strong></li>
+</ol>
+</li>
+<li><strong>What Trusted CA would you like to use to validate the client
+certificate chain presented during certificate authentication?</strong><ol class="lowerroman">
+<li><strong>F5demo-DC-CA.crt</strong></li>
+</ol>
+</li>
+</ol>
+<p>This is the AD Certificates Services CA certificate for this environment
+that was used to issue the client certificates so that the client
+certificate auth can be verified. It was pre-imported for you.</p>
+<ol class="arabic simple" start="9">
+<li>Click Finished</li>
+</ol>
+</div>
+<div class="section" id="test-the-adfs-proxy-forms-authentication-functionality">
+<h2>Test the ADFS Proxy Forms Authentication Functionality<a class="headerlink" href="#test-the-adfs-proxy-forms-authentication-functionality" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Close any open Chrome incognito windows</li>
+<li>Open a new Chrome window if not already open</li>
+<li>Right click the “ADFS Demo App” shortcut and open a new incognito window</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image318.png"><img alt="image2" src="../../_images/image318.png" style="width: 2.48148in; height: 0.92839in;" /></a></p>
+<p><strong>If you do not get the ADFS logon page noted below wait 60-120 seconds for the ADFS servers to sync and try again. If you are still getting the error you may have cache problems. Double check that you have closed all other incognito windows before trying this, and you can clear cache and cookies by performing ctrl+shift+del and selecting “all time”.</strong></p>
+<ol class="arabic simple">
+<li>This time instead of automatically authenticating with Windows
+Integrated Authentication you are presented with a forms login page.
+This is because ADFS is configured to require Forms auth for external
+users.<ol class="loweralpha">
+<li>Username: <strong>user&#64;f5demo.com</strong></li>
+<li>Password: <strong>user</strong></li>
+<li>Click Sign In</li>
+</ol>
+</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image417.png"><img alt="image3" src="../../_images/image417.png" style="width: 2.67593in; height: 1.90558in;" /></a></p>
+<ol class="arabic simple">
+<li>You should see a set of claims displayed in the claims app at
+app.vlab.f5demo.com</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image516.png"><img alt="image4" src="../../_images/image516.png" style="width: 6.50000in; height: 2.27986in;" /></a></p>
+<ol class="loweralpha simple">
+<li>Note that ADFS now identifies the user as outside the corporate
+network, knows that APM acted as an ADFS Proxy, knows the user’s true
+IP address, and that the user is now logging in with
+FormsAuthentication instead of WindowsAuthentication.</li>
+<li>What happened:<ol class="lowerroman">
+<li>You made a request to App</li>
+<li>App redirected you to ADFS for authentication</li>
+<li><strong>The BIG-IP received the request and load balanced it to one of
+the ADFS servers, as well as communicated data about the traffic
+using MS-ADFSPIP.</strong></li>
+<li><strong>The ADFS server determined that you should be authenticated
+using the extranet policy and sent back a logon page which the
+BIG-IP forwarded on to you.</strong></li>
+<li><strong>You submitted the forms and ADFS authenticated with your
+credentials</strong></li>
+<li>ADFS redirected you back to App with a WS-Fed assertion</li>
+<li>App validated the assertion and displayed the claims it received
+from ADFS</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="test-the-adfs-proxy-certificate-authentication-functionality">
+<h2>Test the ADFS Proxy Certificate Authentication Functionality<a class="headerlink" href="#test-the-adfs-proxy-certificate-authentication-functionality" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Close any open Chrome incognito windows</li>
+<li>Open a new Chrome window if not already open</li>
+<li>Right click the “ADFS Demo App” shortcut and open a new incognito window</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image318.png"><img alt="image5" src="../../_images/image318.png" style="width: 2.48148in; height: 0.92839in;" /></a></p>
+<ol class="arabic simple">
+<li>Click <strong>Sign in using an X.509 certificate</strong></li>
+</ol>
+<p><a class="reference internal" href="../../_images/image616.png"><img alt="image6" src="../../_images/image616.png" style="width: 3.60185in; height: 2.45138in;" /></a></p>
+<ol class="loweralpha simple">
+<li>Note that you can configure ADFS extranet authentication settings to
+perform certificate authentication automatically. The ADFS server in
+this lab is setup to allow both forms and certificate authentication.</li>
+</ol>
+<ol class="arabic simple">
+<li>The certificate is already selected, click OK.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image715.png"><img alt="image7" src="../../_images/image715.png" style="width: 3.60185in; height: 1.95908in;" /></a></p>
+<ol class="arabic simple">
+<li>You should see a set of claims displayed in the claims app at
+app.vlab.f5demo.com</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image813.png"><img alt="image8" src="../../_images/image813.png" style="width: 6.50000in; height: 1.94236in;" /></a></p>
+<ol class="loweralpha simple">
+<li>Note that ADFS now ADFS has identified the authentication type as
+CertificateAuthentication</li>
+<li>What happened:<ol class="lowerroman">
+<li>You made a request to App</li>
+<li>App redirected you to ADFS for authentication</li>
+<li><strong>The BIG-IP received the request and load balanced it to one
+of the ADFS servers, as well as communicated data about the
+traffic using MS-ADFSPIP.</strong></li>
+<li><strong>The ADFS server determined that you should be authenticated
+using the extranet policy and sent back a logon page which the
+BIG-IP forwarded on to you.</strong></li>
+<li><strong>You selected the Certificate Authentication, which caused you
+to be redirected to port 49443 where the BIG-IP performed
+certificate authentication</strong></li>
+<li><strong>BIG-IP forwarded on details about your authentication using
+MS-ADFSPIP to the ADFS server</strong></li>
+<li>ADFS redirected you back to App with a WS-Fed assertion</li>
+<li>App validated the assertion and displayed the claims it
+received from ADFS</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="review-the-adfs-proxy-configuration">
+<h2>Review the ADFS Proxy Configuration<a class="headerlink" href="#review-the-adfs-proxy-configuration" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Go to Local Traffic -&gt; Virtual Servers</p>
+</li>
+<li><p class="first">Notice there are two adfs-proxy virtual servers deployed, one on port
+443 and one on port 49443</p>
+<ol class="loweralpha simple">
+<li>443 is for ADFS traffic<ol class="lowerroman">
+<li>Pool members use port 443</li>
+</ol>
+</li>
+<li>49443 is for client certificate auth support<ol class="lowerroman">
+<li>Pool members use <strong>port 443</strong><ol class="arabic">
+<li><strong>This is different from the load balancing only, which
+pointed to port 49443. This is because the certificate auth
+is not passing through, BIG-IP is performing the certificate
+auth, then sending the data along to ADFS using
+MS-ADFSPIP.</strong></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ol class="loweralpha simple">
+<li>Click on the virtual server <strong>adfs-proxy_adfs_vs_443</strong><ol class="lowerroman">
+<li>Scroll down and examine the Access Policy -&gt; ADFS Proxy
+configuration item<ol class="arabic">
+<li>Note that ADFS Proxy functionality is enabled and a trust is
+established. The BIG-IP will auto-renew this prior to
+expiration.</li>
+<li>Note that no Access Profile is deployed. You can add one if
+desired for additional security. The iApp is capable of
+deploying it, along with the required bypass iRule for some
+URLs like the metadata sharing URL.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Go to Local Traffic -&gt; Profiles -&gt; SSL -&gt; Server and click
+<strong>adfs-proxy_server-ssl</strong><ol class="lowerroman">
+<li>Note that a certificate and key are used on the server side.
+These are created as part of establishing the trust with the
+ADFS server as noted in the previous step and then
+automatically input here.</li>
+<li>This is shared by both the 443 and the 49443 virtual servers
+because they need the same settings to communicate with ADFS.</li>
+</ol>
+</li>
+<li>Change configuration mode to advanced<ol class="lowerroman">
+<li>Note that the server name field contains adfs.vlab.f5demo.com.
+ADFS requires SNI and this is how you configure it on the
+serverssl profile.</li>
+</ol>
+</li>
+<li>Go to Local Traffic -&gt; Profiles -&gt; SSL -&gt; Client and click
+<strong>adfs-proxy_client-ssl-cert-auth</strong><ol class="lowerroman">
+<li>This is the SSL profile that provides certificate auth on the
+port 49443 virtual server.</li>
+<li>Note that Client Certificate is set to required and the
+Trusted Certificate Authorities is set to f5demo-DC-CA.</li>
+<li>You could use Advertised Certified Authority here if you
+wanted the client to only display certificates generated by a
+specific CA. This could be your primary CA, or even a
+specific subordinate CA if you wanted to issue client
+certificate auth user certificates from a specific CA to
+reduce the number shown to the user.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="../module2/module-adfs-load-balancing.html" title="Module: Deploy ADFS Load Balancing Services" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="../module4/module-additional.html" title="Module: Additional Information and Troubleshooting Tips" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/clouddocs.js"></script>
+  <script src="/assets/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

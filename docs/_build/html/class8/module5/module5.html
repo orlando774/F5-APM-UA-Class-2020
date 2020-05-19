@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 5: Command Line Tools</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 5: Command Line Tools"/>
+  <meta name="product" content="F5 Identity and Access Management Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-05-19 03:36:25"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Identity and Access Management Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab 5: Command Line Tools &#8212; F5 Identity and Access Management Solutions  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Conclusion" href="../conclusion.html" />
+    <link rel="prev" title="Lab 4: Visual Policy Editor (VPE) &amp; Session Variables" href="../module4/module4.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      <!-- javascript code to maintain the sidebar scroll positon when loaded -->
+      <script type="text/javascript">
+        $(function() {
+          if (localStorage.tempScrollTop) {
+            $('#sidebar').scrollTop(localStorage.tempScrollTop);
+          }
+        });
+        $('#sidebar').on("scroll", function() {
+          localStorage.setItem("tempScrollTop", $('#sidebar').scrollTop());
+        });
+      </script>
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Identity and Access Management Solutions  </h5>
+        
+<div id="searchbox" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" class="search" name="q" placeholder=" Search..." />
+    <button type="submit" class="btn btn-info navbar-btn"><i class="fa fa-search"></i></button>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">Class 1: SAML Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">Class 2: OAuth Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">Class 3: SWG - Securing Outbound Internet Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class4/class4.html">Class 4: SAML Identity Provider (IdP) Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class5/class5.html">Class 5: AD FS Proxy Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class6/class6.html">Class 6: Federating Common Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class7/class7.html">Class 7: Introduction to Universal Access</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class8.html">Class 8: Troubleshooting Universal Access</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labinfo.html">Lab Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">Lab 1: APM Troubleshooting Lab Object Preparation (GUI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module2/module2.html">Lab 2: APM Troubleshooting Lab Object Preparation (TMSH)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module3/module3.html">Lab 3: General Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module4/module4.html">Lab 4: Visual Policy Editor (VPE) &amp; Session Variables</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 5: Command Line Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../conclusion.html">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../class9/class9.html">Class 9: Multi-Factor Auth for Cloud Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class10/class10.html">Class 10: Privileged User Access</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 5: Command Line Tools</a><ul>
+<li><a class="reference internal" href="#questions-to-ask-yourself-lab5">Questions to ask yourself (LAB5)</a></li>
+<li><a class="reference internal" href="#whats-not-covered-but-we-will-discuss">What’s Not Covered but we will discuss</a></li>
+<li><a class="reference internal" href="#checking-apm-logs">Checking APM Logs</a></li>
+<li><a class="reference internal" href="#turning-up-the-heat-on-logging">Turning up the heat on Logging</a></li>
+<li><a class="reference internal" href="#sessiondump-command">SessionDump Command</a></li>
+<li><a class="reference internal" href="#adtest-tool">ADTest Tool</a></li>
+<li><a class="reference internal" href="#irules-logging-assistance">iRules Logging Assistance</a></li>
+<li><a class="reference internal" href="#tcpdump-troubleshooting-assistance">TCPDump Troubleshooting Assistance</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Identity and Access Management Solutions</a>
+              &gt; <a href="../class8.html">Class 8: Troubleshooting Universal Access</a>
+
+          <span class="right">
+             <a href="../../_sources/class8/module5/module5.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/osantiago774/f5-agility-labs-iam">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-5-command-line-tools">
+<h1>Lab 5: Command Line Tools<a class="headerlink" href="#lab-5-command-line-tools" title="Permalink to this headline">¶</a></h1>
+<p>This lab will show you how to make use of some of the Command Line
+Utilities for troubleshooting Access Policy Manager when dealing with
+Authentication issues that you could experience.</p>
+<div class="section" id="questions-to-ask-yourself-lab5">
+<h2>Questions to ask yourself (LAB5)<a class="headerlink" href="#questions-to-ask-yourself-lab5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>What should I expect in the Logs with Default Settings?</li>
+<li>Can I review the APM configuration from TMSH?</li>
+<li>Can I review Session Data from the CLI?</li>
+<li>How can I test if the AAA server responds to Authentication Tests
+using CLI Tools?</li>
+<li>How can I test if the AAA server respond to Query Tests using CLI
+Tools?</li>
+<li>How can I change the Logging Level for more Verbose details?</li>
+<li>How can I use iRules for Troubleshooting Assistance?</li>
+<li>How can I use TCPDump for Troubleshooting Assistance?</li>
+</ul>
+</div>
+<div class="section" id="whats-not-covered-but-we-will-discuss">
+<h2>What’s Not Covered but we will discuss<a class="headerlink" href="#whats-not-covered-but-we-will-discuss" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>VDI Troubleshooting/Debug Logging</li>
+<li>SAML Troubleshooting Tools – SAML Tracer (Not CLI based)</li>
+</ul>
+</div>
+<div class="section" id="checking-apm-logs">
+<h2>Checking APM Logs<a class="headerlink" href="#checking-apm-logs" title="Permalink to this headline">¶</a></h2>
+<p>APM Logs by default show the same information you can get from the
+Manage Sessions menu, as well as APM module-specific information.</p>
+<p>Access Policy Manager uses syslog-ng to log events. The syslog-ng
+utility is an enhanced version of the standard logging utility syslog.</p>
+<p>The type of event messages available on the APM are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="7%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Event Messages</th>
+<th class="head">File Location</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Access Policy Events</td>
+<td>/var/log/apm</td>
+<td>Access Policy event messages include logs pertinent to access policy, SSO, network access, and web applications. To view access policy events, on the navigation pane, expand System menu and click Logs.</td>
+</tr>
+<tr class="row-odd"><td>Audit Logging</td>
+<td>/var/log/audit</td>
+<td>Audit event messages are those that the APM system logs as a result of changes made to its configuration.</td>
+</tr>
+</tbody>
+</table>
+<p>When setting up logging you can customize the logs by designating the
+minimum severity level or log level, that you want the system to report
+when a type of event occurs. The minimum log level indicates the minimum
+severity level at which the system logs that type of event.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Files are rotated daily if their file size exceeds 10MB. Additionally, weekly rotations are enforced if the rotated log file is a week old, regardless whether or not the file exceeds the 10MB threshold.</p>
+</div>
+<p>The <strong>default</strong> log level for the BIG-IP APM access policy log is
+<strong>Notice</strong>, which does <strong>*not*</strong> log Session Variables. Setting the
+access policy log level to <strong>Informational</strong> or <strong>Debug</strong> will cause the
+BIG-IP APM system to log Session Variables, but it will also add
+additional system overhead. If you need to log Session Variables on a
+production system, F5 recommends setting the access policy log level to
+Informational temporarily while performing troubleshooting or debugging.</p>
+<p>We need to add some more actions to the APM Profile in the VPE we have
+been working with to go along with the next few lab tests.</p>
+<p><strong>STEP 1</strong></p>
+<p><a class="reference internal" href="../../_images/image1432.png"><img alt="image130" src="../../_images/image1432.png" style="width: 5.30000in; height: 1.16923in;" /></a></p>
+<ol class="arabic simple">
+<li>Open the VPE and add a new AD Query action after the first Message
+Box action by selecting the <strong>+</strong> sign that follows.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1452.png"><img alt="image131" src="../../_images/image1452.png" style="width: 5.30972in; height: 4.63194in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Navigate to the Authentication tab and select the AD Query radial and
+click <strong>Add Item</strong>.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1472.png"><img alt="image132" src="../../_images/image1472.png" style="width: 5.30972in; height: 6.07083in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>In the AD Query, use the drop-down dialog box on Server to select the
+<strong>/Common/LAB_AD_AAA</strong> server. Click the <strong>Save</strong> button.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1481.png"><img alt="image133" src="../../_images/image1481.png" style="width: 5.30000in; height: 1.12308in;" /></a></p>
+<ol class="arabic simple" start="4">
+<li>On the top branch following the AD Query action, add another Message
+Box.</li>
+</ol>
+<p>Hint: A Message Box can be added by clicking the <strong>+</strong> sign, navigating
+to the General Purpose tab and selecting Message Box</p>
+<p><a class="reference internal" href="../../_images/image1491.png"><img alt="image134" src="../../_images/image1491.png" style="width: 5.30000in; height: 0.93846in;" /></a></p>
+<ol class="arabic simple" start="5">
+<li>After the second Message Box add the AD Auth action from the
+Authentication tab</li>
+</ol>
+<p>Hint: An AD Auth action can be added by clicking the <strong>+</strong> sign,
+navigating to the Authentication tab and selecting AD Auth</p>
+<p><a class="reference internal" href="../../_images/image1501.png"><img alt="image135" src="../../_images/image1501.png" style="width: 5.29570in; height: 3.03125in;" /></a></p>
+<ol class="arabic simple" start="6">
+<li>In the AD Auth properties window use the server drop-down menu to
+select <strong>/Common/LAB_AD_AAA</strong> server.</li>
+<li>Click the <strong>Save</strong> button.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1514.png"><img alt="image136" src="../../_images/image1514.png" style="width: 5.30000in; height: 0.98462in;" /></a></p>
+<ol class="arabic simple" start="8">
+<li>Your policy should now look like this</li>
+</ol>
+<p>Notice that one the top branch to the AD Query object the line reads
+User Primary Group ID is 100 (See graphic in Step 8 above, just after AD
+Query). Maybe you do not want to query for that information and would
+prefer to delete that branch. You must be <strong>*careful*</strong> in what you
+select or do when deleting that branch when you have other actions
+following it in the policy or they could be deleted when you do not want
+them to be deleted. Here is a trick you can use to preserve the actions
+that follow the ad query when you need to delete a branch.</p>
+<p><a class="reference internal" href="../../_images/image1521.png"><img alt="image137" src="../../_images/image1521.png" style="width: 5.30000in; height: 0.98025in;" /></a></p>
+<ol class="arabic simple" start="9">
+<li>Just before the second Message Box after the “User Primary Group ID
+is 100” and after the <strong>+</strong> symbol there is a double arrow symbol.
+This will allow us to swap portions of the policy that come after
+that <strong>-&gt;&gt;-</strong> double arrow to another location in the VPE policy.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1531.png"><img alt="image138" src="../../_images/image1531.png" style="width: 5.30000in; height: 0.90810in;" /></a></p>
+<ol class="arabic simple" start="10">
+<li>Click the <strong>-&gt;&gt;-</strong> double arrow.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1541.png"><img alt="image139" src="../../_images/image1541.png" style="width: 5.30000in; height: 1.37069in;" /></a></p>
+<ol class="arabic simple" start="11">
+<li>You will now notice a <strong>vertical arrow</strong> pointing to other locations
+in the VPE where this section highlighted in green can be swapped.</li>
+<li>Click on the <strong>Vertical Arrow</strong></li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1551.png"><img alt="image140" src="../../_images/image1551.png" style="width: 5.30000in; height: 1.09365in;" /></a></p>
+<ol class="arabic simple" start="13">
+<li>Now click the <strong>AD Query</strong> action in your policy and go to <strong>Branch
+Rules</strong> tab</li>
+<li>Click the <strong>X</strong> to the right in the gray box for the Branch Rule</li>
+<li>Click <strong>Save</strong> to save your settings</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1561.png"><img alt="image141" src="../../_images/image1561.png" style="width: 5.30000in; height: 0.91667in;" /></a></p>
+<ol class="arabic simple" start="16">
+<li>Your policy should now look like this. Now you can see how the Swap function can help with moving action objects throughout the VPE</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1571.png"><img alt="image142" src="../../_images/image1571.png" style="width: 5.30000in; height: 0.62207in;" /></a></p>
+<ol class="arabic simple" start="17">
+<li>Click <strong>Apply Access Policy</strong> to save and implement or work</li>
+</ol>
+<p>Now let’s see what can be seen in the logs when set at the default
+logging level of Notice.</p>
+<p><strong>TEST 1</strong></p>
+<p><a class="reference internal" href="../../_images/image1581.png"><img alt="image143" src="../../_images/image1581.png" style="width: 5.30972in; height: 2.10556in;" /></a></p>
+<p><a class="reference internal" href="../../_images/image1591.png"><img alt="image144" src="../../_images/image1591.png" style="width: 5.30972in; height: 1.06944in;" /></a></p>
+<p><a class="reference internal" href="../../_images/image1601.png"><img alt="image145" src="../../_images/image1601.png" style="width: 5.30972in; height: 4.00625in;" /></a></p>
+<ol class="arabic simple">
+<li>Review the current Access Policy Logging (Access  Overview  Event
+Logs -&gt; Settings)</li>
+<li>Select <strong>default-log-setting</strong>, then Click Edit to view settings.</li>
+<li>Select <strong>Access System Logs</strong></li>
+</ol>
+<p><a class="reference internal" href="../../_images/image344.png"><img alt="image146" src="../../_images/image344.png" style="width: 5.30000in; height: 5.20239in;" /></a></p>
+<ol class="arabic simple" start="4">
+<li>Logon to the BIGIP APM console using an SSH client (PuTTY from your
+desktop). Select <strong>agilitylab</strong> &gt; <strong>Load</strong> &gt; <strong>Open</strong></li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1621.png"><img alt="image147" src="../../_images/image1621.png" style="width: 5.30000in; height: 1.79246in;" /></a></p>
+<ol class="arabic simple" start="5">
+<li>Maximize your SSH window to reduce line wrapping when reviewing the
+logs from the CLI.</li>
+<li>From the CLI prompt, type <strong>tail –f /var/log/apm</strong> and hit <strong>Enter</strong>
+so you can start see the logs being displayed</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image624.png"><img alt="image148" src="../../_images/image624.png" style="width: 5.20855in; height: 3.44792in;" /></a></p>
+<p>With the SSH console logging, open a browser and access the APM as the
+user <strong>student</strong>.</p>
+<p><a class="reference internal" href="../../_images/image1631.png"><img alt="image149" src="../../_images/image1631.png" style="width: 5.30650in; height: 2.30208in;" /></a></p>
+<ol class="arabic simple" start="7">
+<li>Notice the logs being produced at the different stages of the users
+session as it first reaches the VIP, then when the user
+authenticates, receives message boxes or other policy actions, and
+then when the user reaches the policy result.</li>
+</ol>
+<p>With the <strong>*default logging*</strong> level, there are no session variables
+being logged.</p>
+<p>In the Next test we will turn up logging to Informational and restart
+the user session and then in the last test change logging level to Debug
+and notice the differences from Informational and Notice logging levels.</p>
+</div>
+<div class="section" id="turning-up-the-heat-on-logging">
+<h2>Turning up the heat on Logging<a class="headerlink" href="#turning-up-the-heat-on-logging" title="Permalink to this headline">¶</a></h2>
+<p>Now let’s test more verbose logging. You can step up from Notice to
+Informational and then to Debug if you want to see the differences
+yourself. For the purpose of this test though I will jump straight to
+Debug. You can use the GUI to make the log level changes to Debug or you
+could use the Traffic Management Shell (TMSH) command from the CLI to
+adjust the logging.</p>
+<p><strong>STEP 1</strong></p>
+<p><a class="reference internal" href="../../_images/image1651.png"><img alt="image150" src="../../_images/image1651.png" style="width: 5.30972in; height: 3.97778in;" /></a></p>
+<ol class="arabic simple">
+<li>Change Access Policy log setting to Debug (Access -&gt; Overview  Event
+Logs  Settings, select default-log-setting, then click Edit)</li>
+</ol>
+<p>TIP: Make sure you change setting back to Notice when not
+troubleshooting. High levels of logging not only consume more disk
+space, but also consume other resources, such as CPU, when enabled.</p>
+<p><strong>TEST 2</strong></p>
+<p><a class="reference internal" href="../../_images/image1661.png"><img alt="image151" src="../../_images/image1661.png" style="width: 5.30874in; height: 2.17708in;" /></a></p>
+<ol class="arabic simple">
+<li>Once you have the logging level increased restart you user session
+with the browser to the APM VIP and walk through the policy message
+boxes and other actions taking note of the additional verbosity in
+the logs you see in the SSH terminal window.</li>
+</ol>
+<p>For sake of saving space in this document we will not include the screen
+shots showing the Informational and Debug logging messages and allow you
+to experience that yourself during your tests.</p>
+</div>
+<div class="section" id="sessiondump-command">
+<h2>SessionDump Command<a class="headerlink" href="#sessiondump-command" title="Permalink to this headline">¶</a></h2>
+<p>SessionDump is a command line utility that shows sessions and their
+associated session variables (like GUI Reports)</p>
+<p>The sessiondump command has sever switches that can be used and you can
+further enhance your troubleshooting by additionally using other CLI
+utilities like grep to help filter the results to certain information.
+As you can see from the examples below, the first command simple
+provides all keys to be dumped for any/all user sessions while the
+second using grep allows you to filter the output to those associated
+with a given username. Refer to the screen shots below if you need
+additional detail.</p>
+<p><a class="reference internal" href="../../_images/image1671.png"><img alt="image152" src="../../_images/image1671.png" style="width: 5.36458in; height: 5.70163in;" /></a></p>
+<p>This first example uses just the –allkeys switch.</p>
+<p><strong>sessiondump –allkeys</strong></p>
+<p><a class="reference internal" href="../../_images/image1681.png"><img alt="image153" src="../../_images/image1681.png" style="width: 5.30000in; height: 1.03609in;" /></a></p>
+<p>This second example also uses the –allkeys switch. However, it also adds
+the |grep command to search for the “username”</p>
+<p><strong>sessiondump -allkeys | grep ‘student’</strong></p>
+<p><strong>STEP 1</strong></p>
+<p><a class="reference internal" href="../../_images/image1691.png"><img alt="image154" src="../../_images/image1691.png" style="width: 5.30000in; height: 0.62673in;" /></a></p>
+<ol class="arabic simple">
+<li>On the command line, if you still had the tail command showing
+logging then stop that now by typing <strong>CTRL-C</strong></li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1701.png"><img alt="image155" src="../../_images/image1701.png" style="width: 5.30000in; height: 0.44278in;" /></a></p>
+<p>Remember back in previous labs we learned that Session Variables cannot
+be displayed in the Reports screens if the User Session is not in an
+<strong>*Active*</strong> state. Well that is the same with the CLI sessiondump
+utility. There must be active sessions through APM in order to dump
+details.</p>
+<ol class="arabic simple" start="2">
+<li>Once you are at the command prompt again try using the <strong>sessiondump
+–allkeys</strong> command first. Did you receive any data after running the
+command? If not, then why?</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1714.png"><img alt="image156" src="../../_images/image1714.png" style="width: 5.30863in; height: 2.36458in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>If all your previous sessions have expired then startup and new
+session as a user and logon to APM and click through the message
+boxes.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1671.png"><img alt="image157" src="../../_images/image1671.png" style="width: 5.30000in; height: 5.63299in;" /></a></p>
+<ol class="arabic simple" start="4">
+<li>Now on the console type: <strong>sessiondump –allkeys.</strong> You should see a
+long list of information.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1721.png"><img alt="image158" src="../../_images/image1721.png" style="width: 5.30000in; height: 1.03018in;" /></a></p>
+<p>Compare that with running: sessiondump –allkeys | grep student You
+should then only see the lines that had the username you specified in
+the command to be returned</p>
+<p>Now let us have some fun with using this utility to help with SSO
+troubleshooting/validation.</p>
+<p><strong>STEP 2</strong></p>
+<p><a class="reference internal" href="../../_images/image1731.png"><img alt="image159" src="../../_images/image1731.png" style="width: 5.30000in; height: 0.84903in;" /></a></p>
+<ol class="arabic simple">
+<li>Edit the VPE for the <strong>Agility-Lab-Access-Profile</strong> policy we have
+been working with.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1741.png"><img alt="image160" src="../../_images/image1741.png" style="width: 5.30000in; height: 0.93630in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Add two new actions to the policy after the AD Auth on the successful
+branch.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1751.png"><img alt="image161" src="../../_images/image1751.png" style="width: 5.35417in; height: 3.94587in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>First after AD Auth add the SSO Credential Mapping action from the
+Assignment Tab. Click <strong>Add Item</strong></li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1761.png"><img alt="image162" src="../../_images/image1761.png" style="width: 5.28105in; height: 2.06250in;" /></a></p>
+<ol class="arabic simple" start="4">
+<li>Keep the default settings and click <strong>Save</strong>.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1771.png"><img alt="image163" src="../../_images/image1771.png" style="width: 5.33333in; height: 4.00000in;" /></a></p>
+<ol class="arabic simple" start="5">
+<li>Next add after the SSO Credential Mapping action add a Pool Assign
+action from the Assignment tab.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1781.png"><img alt="image164" src="../../_images/image1781.png" style="width: 5.30000in; height: 1.08922in;" /></a></p>
+<ol class="arabic simple" start="6">
+<li>In the next window click the <strong>Add\Delete</strong> link.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1791.png"><img alt="image165" src="../../_images/image1791.png" style="width: 5.30000in; height: 1.44665in;" /></a></p>
+<ol class="arabic simple" start="7">
+<li>Then select the radio button for <strong>/Common/Agility-Lab-Pool</strong>. Now
+click the <strong>Save</strong> button.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1801.png"><img alt="image166" src="../../_images/image1801.png" style="width: 5.30000in; height: 0.62353in;" /></a></p>
+<ol class="arabic simple" start="8">
+<li>Then click Apply Access Policy link on top left of page.</li>
+</ol>
+<p><strong>TEST 2</strong></p>
+<p><a class="reference internal" href="../../_images/image1714.png"><img alt="image167" src="../../_images/image1714.png" style="width: 5.31250in; height: 2.36631in;" /></a></p>
+<ol class="arabic simple">
+<li>Restart a new APM user session. Logon and follow through all the
+policy actions</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1815.png"><img alt="image168" src="../../_images/image1815.png" style="width: 5.30000in; height: 3.32850in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>This time instead of seeing a browser error you should be getting
+prompted for authentication for a website which is the site being
+hosted on the pool member that we assigned to the policy. Why are we
+getting prompted for authentication though? Did we not add the SSO
+Credential Mapping to the policy as well?</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1821.png"><img alt="image169" src="../../_images/image1821.png" style="width: 5.30000in; height: 0.66085in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>Let’s use the following command at the console to check if we are
+getting credentials mapped to token variables properly: <strong>sessiondump
+–allkeys | grep ‘sso</strong>’ You should see two lines that show
+something like this following picture.</li>
+</ol>
+<p>If you see the two lines with session.sso.token.last, then we know the
+credential mapping is happening and the username should be displayed
+accordingly. So what’s missing?</p>
+<p><strong>STEP 3</strong></p>
+<p><a class="reference internal" href="../../_images/image473.png"><img alt="image170" src="../../_images/image473.png" style="width: 5.30972in; height: 1.95069in;" /></a></p>
+<ol class="arabic simple">
+<li>Next go to the Access Policy menu, click on Access -&gt;
+Profiles/Policies -&gt; Access Profiles (Per-Session Policies) .</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1841.png"><img alt="image171" src="../../_images/image1841.png" style="width: 5.30972in; height: 1.00139in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>In the list of access profiles, click the NAME of your access
+profile, <strong>Agility-LAB-Access-Profile</strong></li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1861.png"><img alt="image172" src="../../_images/image1861.png" style="width: 5.30972in; height: 2.29722in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>When this page opens, look at the top, there are four tabs, click the
+<strong>SSO / Auth Domains</strong> tab</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1881.png"><img alt="image173" src="../../_images/image1881.png" style="width: 5.30972in; height: 2.81458in;" /></a></p>
+<ol class="arabic simple" start="4">
+<li>On this page, use the drop down menu on the SSO Configuration row to
+select <strong>Agility_Lab_SSO_NTLM</strong>. Then click Update</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1891.png"><img alt="image174" src="../../_images/image1891.png" style="width: 5.30000in; height: 0.65717in;" /></a></p>
+<ol class="arabic simple" start="5">
+<li>Then click <strong>Apply Access Policy</strong> on the top left of the page and
+apply the policy on the next page.</li>
+</ol>
+<p><strong>TEST 3</strong></p>
+<p><a class="reference internal" href="../../_images/image1714.png"><img alt="image175" src="../../_images/image1714.png" style="width: 5.33201in; height: 2.37500in;" /></a></p>
+<ol class="arabic simple">
+<li>Restart your user session again to the VIP and logon and click
+through the actions.</li>
+</ol>
+<p>If necessary, you can kill your existing session by navigating to Access
+Policy  Manage Sessions, then select the user/session and Click Kill
+Selected Sessions</p>
+<p><a class="reference internal" href="../../_images/image1901.png"><img alt="image176" src="../../_images/image1901.png" style="width: 5.30000in; height: 3.00185in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Now what do you see when the policy has completed? Are you seeing the
+web application without being prompted for an additional logon prompt
+from the application? If so, then you were successful.</li>
+</ol>
+</div>
+<div class="section" id="adtest-tool">
+<h2>ADTest Tool<a class="headerlink" href="#adtest-tool" title="Permalink to this headline">¶</a></h2>
+<p>In this section we will get familiar with anther CLI utility to assist
+in verifying proper authentication and query capabilities to an Active
+Directory domain. We need to prepare for this lab by making a quick
+change to the BIGIP’s configuration.</p>
+<p><strong>STEP 1</strong></p>
+<p><a class="reference internal" href="../../_images/image1915.png"><img alt="image177" src="../../_images/image1915.png" style="width: 4.73405in; height: 7.02083in;" /></a></p>
+<ol class="arabic simple">
+<li>Navigate to System &gt; Configuration &gt; Device  DNS</li>
+<li>Highlight <strong>10.128.10.100</strong> in the DNS Lookup Server List and click
+<strong>Delete</strong>.</li>
+<li>Also highlight and <strong>Delete</strong> the DNS Search Domain List of
+<strong>agilitylab.com</strong></li>
+<li>Click the <strong>Update</strong> button.</li>
+</ol>
+<p>The <strong>/usr/local/bin/adtest</strong> utility is a test tool for APM’s Active
+Directory Module</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="83%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">tYPICAL USAGE</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Auth Test with Administrative username &amp; password (not necessary)</td>
+<td><a class="reference internal" href="../../_images/image1921.png"><img alt="image178" src="../../_images/image1921.png" style="width: 4.19722in; height: 0.55208in;" /></a></td>
+</tr>
+<tr class="row-odd"><td>Auth Test without just username and password</td>
+<td><a class="reference internal" href="../../_images/image1931.png"><img alt="image179" src="../../_images/image1931.png" style="width: 4.20764in; height: 0.53125in;" /></a></td>
+</tr>
+<tr class="row-even"><td>Query Test With Administrative username and password</td>
+<td><a class="reference internal" href="../../_images/image1941.png"><img alt="image180" src="../../_images/image1941.png" style="width: 4.16597in; height: 0.51042in;" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>The ADTest tool can help point out potential issues with a BIG-IP’s
+configuration or interoperability issues on the server’s side.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="74%" />
+<col width="26%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">COMMON ERRORS</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><p class="first">ERROR: query with ‘(sAMAccountName=student)’ failed in krb5_get_init_creds_password(): Preauthentication failed, principal name: <a class="reference external" href="mailto:administrator&#37;&#52;&#48;agilitylab&#46;com">administrator<span>&#64;</span>agilitylab<span>&#46;</span>com</a> (-1765328360)</p>
+<p class="last"><strong>Test done: total tests: 1, success=0, failure=1</strong></p>
+</td>
+<td>The cause of this is simply failed administrative credentials while attempting a query</td>
+</tr>
+<tr class="row-odd"><td><p class="first">ERROR: query with ‘(sAMAccountName=student)’ failed in ldap_sasl_interactive_bind_s(): Local error, SASL(-1): generic failure: GSSAPI Error: Unspecified GSS failure. Minor code may provide more information (Cannot find KDC for requested realm) (-2)</p>
+<p class="last"><strong>Test done: total tests: 1, success=0, failure=1</strong></p>
+</td>
+<td>The cause of this is typically failed DNS resolution</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the screen shots below if you need additional information
+regarding the options of ADTest.</p>
+<p><a class="reference internal" href="../../_images/image1951.png"><img alt="image181" src="../../_images/image1951.png" style="width: 7.12500in; height: 3.23000in;" /></a></p>
+<p><strong>TEST 1</strong></p>
+<p><a class="reference internal" href="../../_images/image1961.png"><img alt="image182" src="../../_images/image1961.png" style="width: 2.70833in; height: 3.44092in;" /></a></p>
+<ol class="arabic simple">
+<li>Try logging on to the VIP as a user again after removing the DNS
+entries. You will notice that your logon will likely fail and you
+will receive the following screen.</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1971.png"><img alt="image183" src="../../_images/image1971.png" style="width: 5.30000in; height: 1.98962in;" /></a></p>
+<ol class="arabic simple" start="2">
+<li>Review the session details for this logon session in reports or
+manage sessions. As we can see from the session details the AD Query
+is failing as well as AD Auth</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1981.png"><img alt="image184" src="../../_images/image1981.png" style="width: 5.30000in; height: 0.45050in;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>Now we can test from the console. Open a console/ssh session. Using
+the following command let us first test authentication using the
+ADtest utility. <strong>adtest -t auth -r “agilitylab.com” -u student -w
+password</strong>. What result did you get with that test?</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image1991.png"><img alt="image185" src="../../_images/image1991.png" style="width: 5.30000in; height: 0.43945in;" /></a></p>
+<ol class="arabic simple" start="4">
+<li>Now let’s try a query test. <strong>adtest -t query -r “agilitylab.com” -A
+Administrator -W adminpass -u student -w password</strong>. What result was
+returned?</li>
+</ol>
+<p><a class="reference internal" href="../../_images/image2001.png"><img alt="image186" src="../../_images/image2001.png" style="width: 5.31250in; height: 7.78721in;" /></a></p>
+<ol class="arabic simple" start="5">
+<li>Go back to the DNS Settings section and re-add the DNS server IP and
+domain. Then re-test the Auth and Query using the ADtest utility.</li>
+</ol>
+</div>
+<div class="section" id="irules-logging-assistance">
+<h2>iRules Logging Assistance<a class="headerlink" href="#irules-logging-assistance" title="Permalink to this headline">¶</a></h2>
+<p>As many know one of the most useful features of F5 BIGIP TMOS is the
+flexibility provided by iRules.</p>
+<p>With APM and iRules you can accomplish many things, in fact you can now
+use iRules to create APM sessions. We are not going to go over that here
+however for the purpose of how iRules can be used for troubleshooting we
+will provide some highlights.</p>
+<p>Often you can run into problems wherein an application single sign-on is
+not being processed and completing as it should. What happens as a
+result of the initial setup not working im/_static/class4tely is that many people
+start second guessing what is happening as traffic passes from the
+clients browser, to the front client side of the BIGIP VIP, then what F5
+VIP is actually able to SEE, next What does LTM see, APM see, what is
+being passed along the way at each stage of the transaction through the
+BIGIP, and of course what does the BIGIP APM then forward to the Backend
+Server Application and How does that Backend Server Application respond?
+Fortunately, iRules can be very beneficial in this process to collect
+and subsequently log specific data at each stage which greatly enhances
+the troubleshooting capabilities.</p>
+<p>We all know that TCPDump can be your friend in capturing data to analyze
+however at times the application workflows between client f5 and server
+and encryption along the way can hamper what TCPDump could capture for
+analysis. Another issue with TCPDump is that is captures a lot of data
+that then needs to be analyzed. Granted TCPDump provides a filtering
+capability to weed through that extra data however when you compare it
+to using some targeted iRules to collect APM session variables and data
+to be output to logs it makes it easier to review the application flow
+more specific to the steps you are trying to validate.</p>
+<p>By default, APM in the current code release automatically secures that
+variables that are entered into the logon page on APM. Furthermore, the
+password is hidden from the reports screen session variable view and
+hidden from the database. Yet there are times when the Admin of the APM
+may need to have access to the decrypted password to either verify that
+the correct information is being keyed by user, received by APM and sent
+from APM to servers. Fortunately, there is a way using an iRule to do
+just this for our troubleshooting purpose.</p>
+<p><strong>TEST 1</strong></p>
+<ol class="arabic simple">
+<li>First open a console session to the BIGIP.</li>
+<li>From the command prompt type: <strong>tail –f /var/log/ltm</strong></li>
+<li>Hit the enter key several times to move the text on the screen up to
+the top so you have a clear screen to start reviewing log data
+during this test.</li>
+<li>Now open a browser and access the APM VIP and logon as a user.</li>
+<li>When you reach the end of your APM policy take a look at the console
+session and note whether or not the logs provide any details about
+the username or password you just used to logon to APM.</li>
+<li>Now in another browser open the APM Admin GUI.</li>
+<li>Go to the reports screen and run the All Sessions Report.</li>
+<li>Open the Session Variables link for the current session you have
+just started as the user.</li>
+<li>Navigate down to the SSO folder and expand it.</li>
+<li>Review the SSO Token Username and verify it displays the username
+you entered.</li>
+<li>Review the SSO Token Password and verify it displays the password
+you entered. Or can you?</li>
+<li>No, you cannot because it is obscured by default.</li>
+</ol>
+<p>Next, we will implement an iRule to assist the Admin in verifying what
+password is being entered by the user.</p>
+<p>An iRule has been created already and supplied for you so you won’t need
+to create it yourself you only need to apply it to the Virtual Server
+under the Resources Tab.</p>
+<p><strong>STEP 2</strong></p>
+<ol class="arabic simple">
+<li>Open the properties for the Virtual Server.</li>
+<li>Click the resources Tab.</li>
+<li>In the iRules section, click the Manage button.</li>
+<li>In the right-side box scroll down to find the iRule named
+<strong>Agility-201-Troubleshooting</strong></li>
+<li>Highlight the iRule and click the arrow button to move it to the left
+box.</li>
+<li>Click the finished button.</li>
+</ol>
+<p><strong>TEST 2</strong></p>
+<ol class="arabic simple">
+<li>Navigate to Manage Sessions and Kill all existing sessions.</li>
+<li>In the console screen, hit the enter key several times to move any
+existing output up to the top of the window, then enter the following
+command <strong>tail –F /var/log/ltm</strong></li>
+<li>In the browser for user session testing, restart the session back to
+the APM VIP and logon with your username and password.</li>
+<li>Click through to the end of the policy.</li>
+<li>Now go back to the console session and review the log messages.</li>
+<li>Do you see the username you entered in the logon page?</li>
+<li>Do you see the password you entered in the logon page? If you
+answered yes then you were successful. Congratulations!</li>
+</ol>
+</div>
+<div class="section" id="tcpdump-troubleshooting-assistance">
+<h2>TCPDump Troubleshooting Assistance<a class="headerlink" href="#tcpdump-troubleshooting-assistance" title="Permalink to this headline">¶</a></h2>
+<p>Beginning in BIG-IP 11.2.0, you can use the “<strong>p</strong>” interface
+modifier with the “<strong>p</strong>” modifier to capture traffic with TMM
+information for a specific flow, and its related peer flow. The
+“<strong>p</strong>” modifier allows you to capture a specific traffic flow
+through the BIG-IP system from end to end, even when the configuration
+uses a Secure Network Address Translation (SNAT) or OneConnect. For
+example, the following command searches for traffic to or from client
+<strong>10.128.10.100</strong> on interface <strong>0.0</strong>:</p>
+<p><strong>tcpdump -ni 0.0:nnnp -s0 -c 100000 -w /var/tmp/capture.dmp host
+10.128.10.100</strong></p>
+<p>Once <strong>tcpdump</strong> identifies a related flow, the flow is marked in TMM,
+and every subsequent packet in the flow (on both sides of the BIG-IP
+system) is written to the capture file.</p>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="../module4/module4.html" title="Lab 4: Visual Policy Editor (VPE) &amp; Session Variables" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="../conclusion.html" title="Conclusion" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/clouddocs.js"></script>
+  <script src="/assets/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

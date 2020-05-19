@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 3: Kerberos to SAML Lab</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 3: Kerberos to SAML Lab"/>
+  <meta name="product" content="F5 Identity and Access Management Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-05-19 03:36:25"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Identity and Access Management Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab 3: Kerberos to SAML Lab &#8212; F5 Identity and Access Management Solutions  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 4: [Optional] SaaS Federation iApp Lab" href="../module4/module4.html" />
+    <link rel="prev" title="Lab 2: SAML Identity Provider (IdP) Lab" href="../module2/module2.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      <!-- javascript code to maintain the sidebar scroll positon when loaded -->
+      <script type="text/javascript">
+        $(function() {
+          if (localStorage.tempScrollTop) {
+            $('#sidebar').scrollTop(localStorage.tempScrollTop);
+          }
+        });
+        $('#sidebar').on("scroll", function() {
+          localStorage.setItem("tempScrollTop", $('#sidebar').scrollTop());
+        });
+      </script>
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Identity and Access Management Solutions  </h5>
+        
+<div id="searchbox" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" class="search" name="q" placeholder=" Search..." />
+    <button type="submit" class="btn btn-info navbar-btn"><i class="fa fa-search"></i></button>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../class1.html">Class 1: SAML Federation with F5</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../labinfo.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">Lab 1: SAML Service Provider (SP) Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module2/module2.html">Lab 2: SAML Identity Provider (IdP) Lab</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 3: Kerberos to SAML Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module4/module4.html">Lab 4: [Optional] SaaS Federation iApp Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../conclusion.html">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">Class 2: OAuth Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">Class 3: SWG - Securing Outbound Internet Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class4/class4.html">Class 4: SAML Identity Provider (IdP) Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class5/class5.html">Class 5: AD FS Proxy Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class6/class6.html">Class 6: Federating Common Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class7/class7.html">Class 7: Introduction to Universal Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class8/class8.html">Class 8: Troubleshooting Universal Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class9/class9.html">Class 9: Multi-Factor Auth for Cloud Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class10/class10.html">Class 10: Privileged User Access</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 3: Kerberos to SAML Lab</a><ul>
+<li><a class="reference internal" href="#task-1-modify-the-saml-identity-provider-idp-access-policy">TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy</a></li>
+<li><a class="reference internal" href="#task-2-test-the-kerberos-to-saml-configuration">TASK 2 - Test the Kerberos to SAML Configuration</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Identity and Access Management Solutions</a>
+              &gt; <a href="../class1.html">Class 1: SAML Federation with F5</a>
+
+          <span class="right">
+             <a href="../../_sources/class1/module3/module3.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/osantiago774/f5-agility-labs-iam">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-3-kerberos-to-saml-lab">
+<h1>Lab 3: Kerberos to SAML Lab<a class="headerlink" href="#lab-3-kerberos-to-saml-lab" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>The purpose of this lab is to deploy and test a Kerberos to SAML
+configuration. Students will modify a previous built Access Policy and
+create a seamless access experience from Kerberos to SAML for connecting
+users. This lab will leverage the work performed previously in Lab 2.
+Archive files are available for the completed Lab 2.</p>
+<p>Objective:</p>
+<ul class="simple">
+<li>Gain an understanding of the Kerberos to SAML relationship its
+component parts.</li>
+<li>Develop an awareness of the different deployment models that Kerberos
+to SAML authentication opens up</li>
+</ul>
+<p>Lab Requirements:</p>
+<ul class="simple">
+<li>All Lab requirements will be noted in the tasks that follow</li>
+</ul>
+<p>Estimated completion time: 25 minutes</p>
+<div class="section" id="task-1-modify-the-saml-identity-provider-idp-access-policy">
+<h2>TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy<a class="headerlink" href="#task-1-modify-the-saml-identity-provider-idp-access-policy" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Using the existing Access Policy from Lab 2, navigate to <strong>Access ‑&gt;
+Profiles/Policies ‑&gt; Access Profiles (Per-Session Policies)</strong>, and click
+the <strong>Edit</strong> link next to the previously created <em>idp.f5demo.com-policy</em></p>
+<p><img alt="image70" src="../../_images/image44.png" /></p>
+</li>
+<li><p class="first">Delete the <strong>Logon Page</strong> object by clicking on the <strong>X</strong> as shown</p>
+<p><img alt="image71" src="../../_images/image70.png" /></p>
+</li>
+<li><p class="first">In the resulting <strong>Item Deletion Confirmation</strong> dialog, ensure that the
+previous node is connect to the <strong>fallback</strong> branch, and click the
+<strong>Delete</strong> button</p>
+<p><img alt="image72" src="../../_images/image71.png" /></p>
+</li>
+<li><p class="first">In the <strong>Visual Policy Editor</strong> window for <code class="docutils literal notranslate"><span class="pre">/Common/idp.f5demo.com‑policy</span></code>,
+click the <strong>Plus (+) Sign</strong> between <strong>Start</strong> and <strong>AD Auth</strong></p>
+<p><img alt="image73" src="../../_images/image72.png" /></p>
+</li>
+<li><p class="first">In the pop-up dialog box, select the <strong>Logon</strong> tab and then select the
+<strong>Radio</strong> next to <strong>HTTP 401 Response</strong>, and click the <strong>Add Item</strong> button</p>
+<p><img alt="image74" src="../../_images/image73.png" /></p>
+</li>
+<li><p class="first">In the <strong>HTTP 401 Response</strong> dialog box, enter the following information:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Basic Auth Realm:</td>
+<td><code class="docutils literal notranslate"><span class="pre">f5demo.com</span></code></td>
+</tr>
+<tr class="row-even"><td>HTTP Auth Level:</td>
+<td><code class="docutils literal notranslate"><span class="pre">basic+negotiate</span></code> (drop down)</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first">Click the <strong>Save</strong> button at the bottom of the dialog box</p>
+<p><img alt="image75" src="../../_images/image74.png" /></p>
+</li>
+<li><p class="first">In the <strong>Visual Policy Editor</strong> window for <code class="docutils literal notranslate"><span class="pre">/Common/idp.f5demo.com‑policy</span></code>,
+click the <strong>Plus (+) Sign</strong> on the <strong>Negotiate</strong> branch between
+<strong>HTTP 401 Response</strong> and <strong>Deny</strong></p>
+</li>
+<li><p class="first">In the pop-up dialog box, select the <strong>Authentication</strong> tab and then
+select the <strong>Radio</strong> next to <strong>Kerberos Auth</strong>, and click the
+<strong>Add Item</strong> button</p>
+<p><img alt="image76" src="../../_images/image75.png" /></p>
+</li>
+<li><p class="first">In the <strong>Kerberos Auth</strong> dialog box, enter the following information:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>AAA Server:</td>
+<td><code class="docutils literal notranslate"><span class="pre">/Common/apm-krb-aaa</span></code> (drop down)</td>
+</tr>
+<tr class="row-even"><td>Request Based Auth:</td>
+<td><code class="docutils literal notranslate"><span class="pre">Disabled</span></code> (drop down)</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first">Click the <strong>Save</strong> button at the bottom of the dialog box</p>
+<p><img alt="image77" src="../../_images/image76.png" /></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <em>apm-krb-aaa</em> object was pre-created for you in this lab.
+More details on the configuration of Kerberos AAA are included in
+the Learn More section at the end of this guide.</p>
+</div>
+</li>
+<li><p class="first">In the <strong>Visual Policy Editor</strong> window for
+<code class="docutils literal notranslate"><span class="pre">/Common/idp.f5demo.com‑policy</span></code>, click the <strong>Plus (+) Sign</strong> on the
+<strong>Successful</strong> branch between <strong>Kerberos Auth</strong> and <strong>Deny</strong></p>
+<p><img alt="image78" src="../../_images/image77.png" /></p>
+</li>
+<li><p class="first">In the pop-up dialog box, select the <strong>Authentication</strong> tab and then
+select the <strong>Radio</strong> next to <strong>AD Query</strong>, and click the <strong>Add Item</strong> button</p>
+<p><img alt="image79" src="../../_images/image78.png" /></p>
+</li>
+<li><p class="first">In the resulting <strong>AD Query(1)</strong> pop-up window, select
+<code class="docutils literal notranslate"><span class="pre">/Commmon/f5demo_ad</span></code> from the <strong>Server</strong> drop down menu</p>
+</li>
+<li><p class="first">In the <strong>SearchFilter</strong> field, enter the following value:
+<code class="docutils literal notranslate"><span class="pre">userPrincipalName=%{session.logon.last.username}</span></code></p>
+<p><img alt="image80" src="../../_images/image79.png" /></p>
+</li>
+<li><p class="first">In the <strong>AD Query(1)</strong> window, click the <strong>Branch Rules</strong> tab</p>
+</li>
+<li><p class="first">Change the <strong>Name</strong> of the branch to <em>Successful</em>.</p>
+</li>
+<li><p class="first">Click the <strong>Change</strong> link next to the <strong>Expression</strong></p>
+<p><img alt="image81" src="../../_images/image53.png" /></p>
+</li>
+<li><p class="first">In the resulting pop-up window, delete the existing expression by clicking
+the <strong>X</strong> as shown</p>
+<p><img alt="image82" src="../../_images/image54.png" /></p>
+</li>
+<li><p class="first">Create a new <strong>Simple</strong> expression by clicking the <strong>Add Expression</strong> button</p>
+<p><img alt="image83" src="../../_images/image80.png" /></p>
+</li>
+<li><p class="first">In the resulting menu, select the following from the drop down menus:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Agent Sel:</td>
+<td><code class="docutils literal notranslate"><span class="pre">AD</span> <span class="pre">Query</span></code></td>
+</tr>
+<tr class="row-even"><td>Condition:</td>
+<td><code class="docutils literal notranslate"><span class="pre">AD</span> <span class="pre">Query</span> <span class="pre">Passed</span></code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first">Click the <strong>Add Expression</strong> Button</p>
+<p><img alt="image84" src="../../_images/image56.png" /></p>
+</li>
+<li><p class="first">Click the <strong>Finished</strong> button to complete the expression</p>
+<p><img alt="image85" src="../../_images/image81.png" /></p>
+</li>
+<li><p class="first">Click the <strong>Save</strong> button to complete the <strong>AD Query</strong></p>
+<p><img alt="image86" src="../../_images/image58.png" /></p>
+</li>
+<li><p class="first">In the <strong>Visual Policy Editor</strong> window for <code class="docutils literal notranslate"><span class="pre">/Common/idp.f5demo.com‑policy</span></code>,
+click the <strong>Plus (+) Sign</strong> on the <strong>Successful</strong> branch between
+<strong>AD Query(1)</strong> and <strong>Deny</strong></p>
+</li>
+<li><p class="first">In the pop-up dialog box, select the <strong>Assignment</strong> tab and then select
+the <strong>Radio</strong> next to <strong>Advanced Resource Assign</strong>, and click the
+<strong>Add Item</strong> button</p>
+<p><img alt="image87" src="../../_images/image60.png" /></p>
+</li>
+<li><p class="first">In the resulting <strong>Advanced Resource Assign(1)</strong> pop-up window, click
+the <strong>Add New Entry</strong> button</p>
+</li>
+<li><p class="first">In the new Resource Assignment entry, click the <strong>Add/Delete</strong> link</p>
+<p><img alt="image88" src="../../_images/image61.png" /></p>
+</li>
+<li><p class="first">In the resulting pop-up window, click the <strong>SAML</strong> tab, and select the
+<strong>Checkbox</strong> next to <em>/Common/partner-app</em></p>
+<p><img alt="image89" src="../../_images/image62.png" /></p>
+</li>
+<li><p class="first">Click the <strong>Webtop</strong> tab, and select the <strong>Checkbox</strong> next to
+<code class="docutils literal notranslate"><span class="pre">/Common/full_webtop</span></code></p>
+<p><img alt="image90" src="../../_images/image63.png" /></p>
+</li>
+<li><p class="first">Click the <strong>Update</strong> button at the bottom of the window to complete
+the Resource Assignment entry</p>
+</li>
+<li><p class="first">Click the <strong>Save</strong> button at the bottom of the
+<strong>Advanced Resource Assign(1)</strong> window</p>
+</li>
+<li><p class="first">In the <strong>Visual Policy Editor</strong>, select the <strong>Deny</strong> ending on the
+fallback branch following <strong>Advanced Resource Assign</strong></p>
+<p><img alt="image91" src="../../_images/image82.png" /></p>
+</li>
+<li><p class="first">In the <strong>Select Ending</strong> dialog box, selet the <strong>Allow</strong> radio button
+and then click <strong>Save</strong></p>
+<p><img alt="image92" src="../../_images/image65.png" /></p>
+</li>
+<li><p class="first">In the <strong>Visual Policy Editor</strong>, click <strong>Apply Access Policy</strong>
+(top left), and close the <strong>Visual Policy Editor</strong></p>
+<p><img alt="image93" src="../../_images/image83.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="task-2-test-the-kerberos-to-saml-configuration">
+<h2>TASK 2 - Test the Kerberos to SAML Configuration<a class="headerlink" href="#task-2-test-the-kerberos-to-saml-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In the following Lab Task it is recommended that you use Microsoft
+Internet Explorer.  While other browsers also support Kerberos
+(if configured), for the purposes of this Lab Microsoft Internet
+Explorer has been configured and will be used.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Using Internet Explorer from the jump host, navigate to the SAML IdP you
+previously configured at <em>https://idp.f5demo.com</em> (or click the
+provided bookmark)</p>
+<p><img alt="image94" src="../../_images/image84.png" /></p>
+</li>
+<li><p class="first">Were you prompted for credentials? Were you successfully authenticated?
+Did you see the webtop with the SP application?</p>
+</li>
+<li><p class="first">Click on the Partner App icon. Were you successfully authenticated
+(via SAML) to the SP?</p>
+</li>
+<li><p class="first">Review your Active Sessions <strong>(Access ‑&gt; Overview ‑&gt; Active Sessions­­­)</strong></p>
+</li>
+<li><p class="first">Review your Access Report Logs <strong>(Access ‑&gt; Overview ‑&gt; Access Reports)</strong></p>
+</li>
+</ol>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="../module2/module2.html" title="Lab 2: SAML Identity Provider (IdP) Lab" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="../module4/module4.html" title="Lab 4: [Optional] SaaS Federation iApp Lab" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/clouddocs.js"></script>
+  <script src="/assets/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 1.6: Configure the Access Profile</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 1.6: Configure the Access Profile"/>
+  <meta name="product" content="F5 Identity and Access Management Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-05-19 03:36:25"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Identity and Access Management Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab 1.6: Configure the Access Profile &#8212; F5 Identity and Access Management Solutions  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 1.7: Create the Virtual Server" href="lab7.html" />
+    <link rel="prev" title="Lab 1.5: Create a Webtop" href="lab5.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      <!-- javascript code to maintain the sidebar scroll positon when loaded -->
+      <script type="text/javascript">
+        $(function() {
+          if (localStorage.tempScrollTop) {
+            $('#sidebar').scrollTop(localStorage.tempScrollTop);
+          }
+        });
+        $('#sidebar').on("scroll", function() {
+          localStorage.setItem("tempScrollTop", $('#sidebar').scrollTop());
+        });
+      </script>
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Identity and Access Management Solutions  </h5>
+        
+<div id="searchbox" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" class="search" name="q" placeholder=" Search..." />
+    <button type="submit" class="btn btn-info navbar-btn"><i class="fa fa-search"></i></button>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">Class 1: SAML Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">Class 2: OAuth Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">Class 3: SWG - Securing Outbound Internet Access</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class4.html">Class 4: SAML Identity Provider (IdP) Lab</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../labinfo/labinfo.html">Lab Topology &amp; Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bigipbasics.html">BIG-IP Basics (optional)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="module1.html">Module 1: SAML Identity Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module2/module2.html">Module 2: Access Control</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../class5/class5.html">Class 5: AD FS Proxy Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class6/class6.html">Class 6: Federating Common Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class7/class7.html">Class 7: Introduction to Universal Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class8/class8.html">Class 8: Troubleshooting Universal Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class9/class9.html">Class 9: Multi-Factor Auth for Cloud Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class10/class10.html">Class 10: Privileged User Access</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 1.6: Configure the Access Profile</a><ul>
+<li><a class="reference internal" href="#task-1-create-the-access-profile-object">Task 1 - Create the Access Profile Object</a></li>
+<li><a class="reference internal" href="#task-2-configure-the-access-policy-using-the-visual-policy-editor">Task 2 - Configure the Access Policy Using the Visual Policy Editor</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Identity and Access Management Solutions</a>
+              &gt; <a href="../class4.html">Class 4: SAML Identity Provider (IdP) Lab</a>
+              &gt; <a href="module1.html">Module 1: SAML Identity Provider</a>
+
+          <span class="right">
+             <a href="../../_sources/class4/module1/lab6.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/osantiago774/f5-agility-labs-iam">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-1-6-configure-the-access-profile">
+<h1>Lab 1.6: Configure the Access Profile<a class="headerlink" href="#lab-1-6-configure-the-access-profile" title="Permalink to this headline">¶</a></h1>
+<div class="graphviz"><object data="../../_images/graphviz-04dc1d8563b4e499e8ce141282dc8619b99b39a5.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph breadcrumb {
+   rankdir=&quot;LR&quot;
+   ranksep=.4
+   node [fontsize=10,style=&quot;rounded,filled&quot;,shape=box,color=gray72,margin=&quot;0.05,0.05&quot;,height=0.1]
+   fontsize = 10
+   labeljust=&quot;l&quot;
+   subgraph cluster_provider {
+      style = &quot;rounded,filled&quot;
+      color = lightgrey
+      height = .75
+      label = &quot;BIG-IP APM&quot;
+      idp [label=&quot;IDP&quot;,color=&quot;palegreen&quot;]
+      spconnector [label=&quot;SP Connector&quot;,color=&quot;palegreen&quot;]
+      bind [label=&quot;Bind Connectors&quot;,color=&quot;palegreen&quot;]
+      resource [label=&quot;SAML Resource&quot;,color=&quot;palegreen&quot;]
+      webtop [label=&quot;Webtop&quot;,color=&quot;palegreen&quot;]
+      profile [label=&quot;Access Profile&quot;,color=&quot;steelblue1&quot;]
+      vs [label=&quot;VS&quot;]
+      test [label=&quot;Test&quot;]
+      idp -&gt; spconnector -&gt; bind -&gt; resource -&gt; webtop -&gt; profile -&gt; vs -&gt; test
+
+   }
+}</p></object></div>
+<p>The Access Profile defines the characteristics of how we authenticate
+and authorize a user using the BIG-IP platform. It controls things like
+what type logon page is presented to the user (if any at all), what
+language any dialog messages should be presented in, and – most
+importantly – the flow through which we limit access and assign
+resources.</p>
+<p>F5 BIG-IP Access Policy Manager supports two types of Access Policies:</p>
+<ol class="arabic simple">
+<li>Per-Session access policies</li>
+<li>Per-Request access policies</li>
+</ol>
+<p>The difference centers around how frequently a policy is evaluated,
+either once at time of initial logon or after every single HTTP
+request.</p>
+<div class="section" id="task-1-create-the-access-profile-object">
+<h2>Task 1 - Create the Access Profile Object<a class="headerlink" href="#task-1-create-the-access-profile-object" title="Permalink to this headline">¶</a></h2>
+<ol class="loweralpha">
+<li><p class="first">Navigate to <span class="menuselection">Access ‣ Profiles/Policies ‣ Access Profiles (Per-Session Policies)</span></p>
+</li>
+<li><p class="first">Click the <span class="guilabel">+</span> sign</p>
+<blockquote>
+<div><p><img alt="image14" src="../../_images/image1412.png" /></p>
+</div></blockquote>
+</li>
+<li><p class="first">Configure the following settings:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>idp.f5demo.com-policy</td>
+</tr>
+<tr class="row-odd"><td>Profile Type</td>
+<td>All</td>
+</tr>
+<tr class="row-even"><td>Languages</td>
+<td>English (en)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="image15" src="../../_images/image1512.png" /></p>
+<p><img alt="image16" src="../../_images/image1612.png" /></p>
+</div></blockquote>
+</li>
+<li><p class="first">Click the <span class="guilabel">Finished</span> button.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="task-2-configure-the-access-policy-using-the-visual-policy-editor">
+<h2>Task 2 - Configure the Access Policy Using the Visual Policy Editor<a class="headerlink" href="#task-2-configure-the-access-policy-using-the-visual-policy-editor" title="Permalink to this headline">¶</a></h2>
+<p>The Visual Policy Editor (VPE) is where the administrator configures
+the heart of the Access Policy. Using a flow chart methodology, it is
+easy to create robust policies without adding burdensome management
+overhead. Even significant policies can be easily read and understood.</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Open the Visual Policy Editor</dt>
+<dd><ol class="first loweralpha">
+<li><p class="first">Navigate to <span class="menuselection">Access ‣ Profiles/Policies ‣ Access Profiles (Per-Session Policies)</span></p>
+</li>
+<li><p class="first">Click the <span class="guilabel">Edit…</span> link and the VPE will open in a new window</p>
+<blockquote>
+<div><p><img alt="image20" src="../../_images/image2012.png" /></p>
+</div></blockquote>
+</li>
+</ol>
+<p>We’ll build a policy like the one below:</p>
+<blockquote class="last">
+<div><p><img alt="image17" src="../../_images/image1712.png" /></p>
+</div></blockquote>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Add a Logon Page</dt>
+<dd><ol class="first last loweralpha simple">
+<li>Click on the <span class="guilabel">+</span> link after the <span class="guilabel">Start</span> node</li>
+<li>Select the <span class="guilabel">Logon Page</span> tab and click the <span class="guilabel">Add Item</span> button</li>
+<li>Use the default settings and click the <span class="guilabel">Save</span> button</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Add an Authentication Mechanism</dt>
+<dd><ol class="first loweralpha simple">
+<li>Click on the <span class="guilabel">+</span> link after the <span class="guilabel">Logon Page</span> node</li>
+<li>Select the <span class="guilabel">Authentication</span> tab and select <span class="guilabel">LocalDB Auth</span> then click the <span class="guilabel">Add Item</span> button</li>
+<li>Configure the following settings:</li>
+</ol>
+<table border="1" class="docutils">
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>LocalDB Instance</td>
+<td>/Common/agility</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="image18" src="../../_images/image1812.png" /></p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The administrator can select from a variety of
+Authentication Mechanisms, including Active Directory and LDAP,
+among others. In this lab, the <span class="guilabel">LocalDB Auth</span> has been
+pre-configured.</p>
+</div>
+</div></blockquote>
+<ol class="last loweralpha simple" start="4">
+<li>Click the <span class="guilabel">Save</span> button.</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Add Advanced Resource Assign</dt>
+<dd><ol class="first loweralpha simple">
+<li>Click on the <span class="guilabel">+</span> link on the successful branch after the <span class="guilabel">LocalDB Auth</span> node</li>
+<li>Select the <span class="guilabel">Assignment</span> tab and select <span class="guilabel">Advanced Resource Assign</span> then click the <span class="guilabel">Add Item</span> button</li>
+<li>Click the <span class="guilabel">Add New Entry</span> button</li>
+<li>Click the <span class="guilabel">Add/Delete</span> link</li>
+<li>Select the <span class="guilabel">Webtop</span> tab and select the <span class="guilabel">/Common/saml_webtop</span></li>
+<li>Select the <span class="guilabel">SAML</span> tab and select the <span class="guilabel">/Common/app.f5demo.com</span></li>
+<li>Click the <span class="guilabel">Update</span> button, then click the <span class="guilabel">Save</span> button</li>
+</ol>
+<p class="last"><img alt="image19" src="../../_images/image1912.png" /></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Change the ending to Allow</dt>
+<dd><ol class="first last loweralpha simple">
+<li>Click on the <span class="guilabel">Deny</span> ending after the <span class="guilabel">Advanced Resource Assign</span></li>
+<li>Select <span class="guilabel">Allow</span></li>
+<li>Click <span class="guilabel">Save</span></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Apply Policy Changes</dt>
+<dd><ol class="first last loweralpha simple">
+<li>Click the <span class="guilabel">Apply Access Policy</span> in top left next to the F5 red ball</li>
+<li>Close browser tab</li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="lab5.html" title="Lab 1.5: Create a Webtop" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="lab7.html" title="Lab 1.7: Create the Virtual Server" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/clouddocs.js"></script>
+  <script src="/assets/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

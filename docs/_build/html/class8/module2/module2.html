@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 2: APM Troubleshooting Lab Object Preparation (TMSH)</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 2: APM Troubleshooting Lab Object Preparation (TMSH)"/>
+  <meta name="product" content="F5 Identity and Access Management Solutions"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2020-05-19 03:36:25"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Identity and Access Management Solutions" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab 2: APM Troubleshooting Lab Object Preparation (TMSH) &#8212; F5 Identity and Access Management Solutions  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 3: General Troubleshooting" href="../module3/module3.html" />
+    <link rel="prev" title="Lab 1: APM Troubleshooting Lab Object Preparation (GUI)" href="../module1/module1.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      <!-- javascript code to maintain the sidebar scroll positon when loaded -->
+      <script type="text/javascript">
+        $(function() {
+          if (localStorage.tempScrollTop) {
+            $('#sidebar').scrollTop(localStorage.tempScrollTop);
+          }
+        });
+        $('#sidebar').on("scroll", function() {
+          localStorage.setItem("tempScrollTop", $('#sidebar').scrollTop());
+        });
+      </script>
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Identity and Access Management Solutions  </h5>
+        
+<div id="searchbox" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" class="search" name="q" placeholder=" Search..." />
+    <button type="submit" class="btn btn-info navbar-btn"><i class="fa fa-search"></i></button>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">Class 1: SAML Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">Class 2: OAuth Federation with F5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">Class 3: SWG - Securing Outbound Internet Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class4/class4.html">Class 4: SAML Identity Provider (IdP) Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class5/class5.html">Class 5: AD FS Proxy Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class6/class6.html">Class 6: Federating Common Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class7/class7.html">Class 7: Introduction to Universal Access</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class8.html">Class 8: Troubleshooting Universal Access</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labinfo.html">Lab Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">Lab 1: APM Troubleshooting Lab Object Preparation (GUI)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 2: APM Troubleshooting Lab Object Preparation (TMSH)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module3/module3.html">Lab 3: General Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module4/module4.html">Lab 4: Visual Policy Editor (VPE) &amp; Session Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module5/module5.html">Lab 5: Command Line Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../conclusion.html">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../class9/class9.html">Class 9: Multi-Factor Auth for Cloud Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class10/class10.html">Class 10: Privileged User Access</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 2: APM Troubleshooting Lab Object Preparation (TMSH)</a><ul>
+<li><a class="reference internal" href="#connect-to-the-lab-via-ssh">Connect to the Lab via SSH</a></li>
+<li><a class="reference internal" href="#dns-resolver-for-system-configuration-tmsh">DNS Resolver for System Configuration (TMSH)</a></li>
+<li><a class="reference internal" href="#ntp-server-for-system-configuration-tmsh">NTP Server for System Configuration (TMSH)</a></li>
+<li><a class="reference internal" href="#access-policy-apm-aaa-server-active-directory-object-creation-tmsh">Access Policy (APM) AAA Server – Active Directory Object Creation (TMSH)</a></li>
+<li><a class="reference internal" href="#access-policy-apm-sso-configuration-ntlmv1-tmsh">Access Policy (APM) SSO Configuration – NTLMv1 (TMSH)</a></li>
+<li><a class="reference internal" href="#access-policy-apm-access-profile-creation-see-gui-steps">Access Policy (APM) Access Profile Creation (see GUI steps)</a></li>
+<li><a class="reference internal" href="#local-traffic-ltm-pool-and-member-creation-tmsh">Local Traffic (LTM) Pool and Member Creation (TMSH)</a></li>
+<li><a class="reference internal" href="#local-traffic-ltm-virtual-server-creation-tmsh">Local Traffic (LTM) Virtual Server Creation (TMSH)</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Identity and Access Management Solutions</a>
+              &gt; <a href="../class8.html">Class 8: Troubleshooting Universal Access</a>
+
+          <span class="right">
+             <a href="../../_sources/class8/module2/module2.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/osantiago774/f5-agility-labs-iam">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-2-apm-troubleshooting-lab-object-preparation-tmsh">
+<h1>Lab 2: APM Troubleshooting Lab Object Preparation (TMSH)<a class="headerlink" href="#lab-2-apm-troubleshooting-lab-object-preparation-tmsh" title="Permalink to this headline">¶</a></h1>
+<p><em>Note:  You only need to perform one of Lab 1, 2, or 3.  They accomplish the same thing only in different ways.  Lab 2 gets the Lab Preparation using TMSH</em></p>
+<p>The purpose of this lab is to preconfigure some objects that will be
+used throughout the other labs. These objects are as follows:</p>
+<ul class="simple">
+<li>Domain Name Services (DNS) Resolver</li>
+<li>Network Time Protocol (NTP) Server</li>
+<li>Access Policy (APM) AAA Server – Active Directory</li>
+<li>Access Policy (APM) SSO Configuration – NTLMv1</li>
+<li>Access Policy (APM) Access Profile</li>
+<li>Local Traffic (LTM) Pool and Member</li>
+<li>Local Traffic (LTM) Virtual Server</li>
+</ul>
+<div class="section" id="connect-to-the-lab-via-ssh">
+<h2>Connect to the Lab via SSH<a class="headerlink" href="#connect-to-the-lab-via-ssh" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../../_images/image320.png"><img alt="image1" src="../../_images/image320.png" style="width: 5.30000in; height: 3.34687in;" /></a></p>
+<ol class="arabic simple">
+<li>Establish an RDP connection to your Jump Host and double-click on the
+<strong>BIG-IP</strong> Chrome shortcut on the Windows desktop.
+-  User: agility
+-  Password: Agility1</li>
+<li>Ignore the certificate warning.</li>
+<li>Login into the BIG-IP via SSH using putty and the following credentials:
+-  User: root
+-  Password: default</li>
+<li>Log in to tmsh by typing the following command:
+<strong>tmsh</strong></li>
+</ol>
+</div>
+<div class="section" id="dns-resolver-for-system-configuration-tmsh">
+<h2>DNS Resolver for System Configuration (TMSH)<a class="headerlink" href="#dns-resolver-for-system-configuration-tmsh" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">To add a name server to your /etc/resolv.conf file, use the following command syntax, replacing &lt;IP addresses&gt; with your IP addresses:</p>
+<p><strong>modify sys dns name-servers add { &lt;IP addresses&gt; }</strong></p>
+</li>
+<li><p class="first">To add domains to your search list use the following command replacing &lt;domains&gt; with the domain you wish to add:</p>
+<p><strong>modify sys dns search add { &lt;domains&gt; }</strong></p>
+</li>
+<li><p class="first">Configure as follows:</p>
+<p><strong>modify sys dns name-servers add { 10.128.20.100 }</strong></p>
+<p><strong>modify sys dns search add { agilitylab.com }</strong></p>
+<p><strong>save sys config</strong></p>
+</li>
+<li><p class="first">To verify, use the following command:
+<strong>list sys dns</strong></p>
+<p>You should see the following reply:
+<a class="reference internal" href="../../_images/image250.png"><img alt="image250" src="../../_images/image250.png" style="width: 636px; height: 83px;" /></a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="ntp-server-for-system-configuration-tmsh">
+<h2>NTP Server for System Configuration (TMSH)<a class="headerlink" href="#ntp-server-for-system-configuration-tmsh" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">To configure one or more NTP servers for the BIG-IP system, use the following command syntax:</p>
+<p><strong>modify sys ntp servers add {hostname hostname….}</strong></p>
+</li>
+<li><p class="first">Configure as follows:</p>
+<p><strong>modify sys ntp servers add { 10.128.20.100 }</strong></p>
+<p><strong>save sys config</strong></p>
+</li>
+<li><p class="first">To verify, use the following command:</p>
+<p><strong>list sys ntp</strong></p>
+<p>You snould see the following reply:
+<a class="reference internal" href="../../_images/image2511.png"><img alt="image251" src="../../_images/image2511.png" style="width: 617px; height: 65px;" /></a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="access-policy-apm-aaa-server-active-directory-object-creation-tmsh">
+<h2>Access Policy (APM) AAA Server – Active Directory Object Creation (TMSH)<a class="headerlink" href="#access-policy-apm-aaa-server-active-directory-object-creation-tmsh" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">To configure an Active Directory AAA Server object, use the following command syntax:</p>
+<p><strong>create apm aaa active-directory &lt;name&gt; domain &lt;domain-name&gt; use-pool &lt;disabled&gt;</strong></p>
+</li>
+<li><p class="first">Configure as follows:</p>
+<p><strong>create apm aaa active-directory LAB_AD_AAA domain agilitylab.com use-pool disabled</strong></p>
+<p><strong>save sys config</strong></p>
+</li>
+<li><p class="first">To verify, use the following command:</p>
+<p><strong>list apm aaa</strong></p>
+<p>You should see the following reply:
+<a class="reference internal" href="../../_images/image2521.png"><img alt="image252" src="../../_images/image2521.png" style="width: 589px; height: 83px;" /></a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="access-policy-apm-sso-configuration-ntlmv1-tmsh">
+<h2>Access Policy (APM) SSO Configuration – NTLMv1 (TMSH)<a class="headerlink" href="#access-policy-apm-sso-configuration-ntlmv1-tmsh" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">To configure an NTLMv1 SSO profile, use the following command syntax:</p>
+<p><strong>create apm sso ntlmv1 &lt;profile_name&gt;</strong></p>
+</li>
+<li><p class="first">Configure as follows:</p>
+<p><strong>create apm sso ntlmv1 Agility_Lab_SSO_NTLM</strong></p>
+<p><strong>save sys config</strong></p>
+</li>
+<li><p class="first">To verify, use the command:</p>
+<p><strong>list apm sso</strong></p>
+</li>
+</ol>
+</div>
+<div class="section" id="access-policy-apm-access-profile-creation-see-gui-steps">
+<h2>Access Policy (APM) Access Profile Creation (see GUI steps)<a class="headerlink" href="#access-policy-apm-access-profile-creation-see-gui-steps" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order to gain familiarity with the Visual Policy Editor, please follow the GUI method of Access Policy creation:
+<a class="reference external" href="https://ua230-troubleshooting-2018-dev.readthedocs.io/en/latest/class4/module1/module1.html#access-policy-apm-access-profile-creation">https://ua230-troubleshooting-2018-dev.readthedocs.io/en/latest/class4/module1/module1.html#access-policy-apm-access-profile-creation</a></p>
+</div>
+</div>
+<div class="section" id="local-traffic-ltm-pool-and-member-creation-tmsh">
+<h2>Local Traffic (LTM) Pool and Member Creation (TMSH)<a class="headerlink" href="#local-traffic-ltm-pool-and-member-creation-tmsh" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">To configure a LTM Pool and Pool members, use the following command syntax:</p>
+<p><strong>create ltm pool &lt;pool-name&gt; members add { &lt;IP-addr&gt;:&lt;service-port&gt; }</strong></p>
+</li>
+<li><p class="first">Configure as follows:</p>
+<p><strong>create ltm pool Agility-Lab-Pool members add { 10.128.20.100:80 }</strong></p>
+<p><strong>save sys config</strong></p>
+</li>
+<li><p class="first">To verify, use the following command:</p>
+<p><strong>list ltm pool</strong></p>
+</li>
+</ol>
+</div>
+<div class="section" id="local-traffic-ltm-virtual-server-creation-tmsh">
+<h2>Local Traffic (LTM) Virtual Server Creation (TMSH)<a class="headerlink" href="#local-traffic-ltm-virtual-server-creation-tmsh" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">To configure a virtual server, use the following command syntax:</p>
+<p><strong>create ltm virtual Agility-LTM-VIP { destination 10.128.10.100:443 profiles add { clientssl http Agility-Lab-Access-Profile } vlans default source-address-translation { type automap } }</strong></p>
+</li>
+<li><p class="first">Configure as follows:</p>
+<p><strong>create ltm virtual Agility-LTM-VIP { destination 10.128.10.100:443 profiles add { clientssl http Agility-Lab-Access-Profile } vlans default source-address-translation { type automap } }</strong></p>
+<p><strong>save sys config</strong></p>
+</li>
+<li><p class="first">To verify, use the following command:</p>
+<p><strong>list ltm virtual</strong></p>
+</li>
+</ol>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="../module1/module1.html" title="Lab 1: APM Troubleshooting Lab Object Preparation (GUI)" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="../module3/module3.html" title="Lab 3: General Troubleshooting" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/clouddocs.js"></script>
+  <script src="/assets/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>
