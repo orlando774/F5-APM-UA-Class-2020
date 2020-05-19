@@ -8,7 +8,7 @@
 classname = "F5 Identity and Access Management Solutions"
 
 # OPTIONAL: The URL to the GitHub Repository for this class
-github_repo = "https://github.com/osantiago774/f5-agility-labs-iam"
+github_repo = "https://github.com/orlando774/F5-APM-UA-Class-2020.git"
 
 # OPTIONAL: Google Analytics
 # googleanalytics_id = 'UA-85156643-4'
